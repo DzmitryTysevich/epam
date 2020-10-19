@@ -1,17 +1,20 @@
 package Cycles;
 
-import java.util.Arrays;
-
 public class Task6 {
+
     public static void main(String[] args) {
-        calculate(1,10);
+        calculate(1, 20);
     }
-    public static void calculate (int m, int n){
-        int [] x = new int[n];
-        for (int i = m, j=0; i <=n ; i++, j++) {
-            x [j] = i;
-        }System.out.println(Arrays.toString(x));
+
+    public static void calculate(int m, int n) {
+        int i, j;
+        for (i = m; i <= n; i++) {
+            System.out.print(i + " - delitel: ");
+            for (j = 2; j <= i - 1; j++) {
+                if (i % j == 0)
+                    System.out.print(j + " ");
+            }
+            System.out.println();
+        }
     }
 }
-
-
