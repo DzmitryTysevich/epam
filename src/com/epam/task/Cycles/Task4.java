@@ -1,4 +1,4 @@
-package Cycles;
+package com.epam.task.Cycles;
 
 import java.math.BigInteger;
 
