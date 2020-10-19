@@ -15,8 +15,7 @@ public class Task1 {
         }
         System.out.println();
     }
-
-
+    
     public static void main(String[] args) {
         calculateTriangle(90, 30);
     }
