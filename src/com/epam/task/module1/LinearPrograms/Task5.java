@@ -1,4 +1,4 @@
-package com.epam.task.LinearPrograms;
+package com.epam.task.module1.LinearPrograms;
 
 public class Task5 {
 
