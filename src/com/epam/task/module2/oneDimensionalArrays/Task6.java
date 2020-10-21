@@ -16,11 +16,9 @@ public class Task6 {
         for (int i = 0; i < a.length; i++) {
             a[i] = random.nextInt(10) + 1;
             if (calculateSimpleNum(i)) {
-                System.out.print(i + " ");
                 sumNumber += a[i];
             }
         }
-        System.out.println();
         System.out.println("Summa: " + sumNumber);
         System.out.println("Array numbers: " + Arrays.toString(a));
     }

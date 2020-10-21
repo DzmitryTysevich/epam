@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Task2 {
     public static void main(String[] args) {
-        System.out.println("Counter: " + calculate(10, 77));
+        System.out.println("Counter: " + calculate(10, 50));
     }
 
     public static int calculate(int n, int z) {
@@ -13,8 +13,8 @@ public class Task2 {
         for (int i = 0; i < a.length; i++) {
             a[i] = (int) (Math.random() * 100);
             if (a[i] > z) {
-                counter++;
                 a[i] = z;
+                counter++;
             }
         }
         System.out.println("Array numbers with Z: " + Arrays.toString(a));
