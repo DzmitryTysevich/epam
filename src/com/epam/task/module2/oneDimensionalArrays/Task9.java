@@ -11,10 +11,10 @@ public class Task9 {
     public static void calculateNumber(int n) {
 
         Random random = new Random();
-        int[] array = new int[n];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (random.nextInt(10) + 1);
-        }
+        int[] array = {4, 7, 7, 2, 4, 5, 3, 5, 6, 9};
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = (random.nextInt(10) + 1);
+
         System.out.println(Arrays.toString(array));
 
         int[] counterArray = new int[array.length];
