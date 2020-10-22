@@ -22,14 +22,23 @@ public class Task8 {
                 min = j;
             }
         }
-        System.out.println(Arrays.toString(a));
-
+        int counter = 0;
         for (int j : a) {
-            if (j > min) {
-                System.out.print(j + ", ");
+            if (j == min) {
+                counter++;
             }
         }
-        System.out.println();
-        System.out.println("Min number: " + min);
+        System.out.println(Arrays.toString(a));
+
+        int[] b = new int[a.length - counter];
+        int indexB = 0;
+        for (int j = 0; j < a.length; j++) {
+            if (a[j] != min) {
+                b[indexB] = a[j];
+                indexB++;
+            }
+        }
+        System.out.println(Arrays.toString(b));
+        System.out.println("Min number: " + min + ", Counter: " + counter);
     }
 }
