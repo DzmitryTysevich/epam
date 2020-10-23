@@ -24,7 +24,6 @@ public class Task10 {
                 }
             }
         }
-
         int counter = 0;
         for (int i = 0; i < array.length; i += 2) {
             array[counter] = array[i];
