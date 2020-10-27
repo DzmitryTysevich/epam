@@ -5,21 +5,23 @@ import java.util.Random;
 
 public class Task9 {
     public static void main(String[] args) {
-        findPopularValue(createRandomArray());
+        int[] randomArray = createRandomArray(9);
+        int[] counterArray = createCounterArray(randomArray);
+        System.out.printf("Popular value: %d", findPopularValue(randomArray, counterArray));
     }
 
-    public static int[] createRandomArray() {
+    public static int[] createRandomArray(int size) {
 
         Random random = new Random();
-        int[] array = {5, 3, 9, 3, 4, 8, 7, 1, 1};
-//        for (int i = 0; i < array.length; i++) {
-//            array[i] = (random.nextInt(10) + 1);
-//        }
-        System.out.println(Arrays.toString(array));
+        int[] array = new int[size];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (random.nextInt(10) + 1);
+        }
+        System.out.println(Arrays.toString(array) + " - Random array");
         return array;
     }
 
-    public static void findPopularValue(int[] array) {
+    public static int[] createCounterArray(int[] array) {
         int[] counterArray = new int[array.length];
 
         for (int i = 0; i < array.length; i++) {
@@ -31,6 +33,10 @@ public class Task9 {
                 }
             }
         }
+        return counterArray;
+    }
+
+    public static int findPopularValue(int[] array, int[] counterArray) {
         int popularValue = 0;
         int maxCounter = counterArray[0];
         for (int i = 0; i < counterArray.length; i++) {
@@ -38,7 +44,7 @@ public class Task9 {
                 maxCounter = counterArray[i];
                 popularValue = array[i];
                 for (int j = 0; j < counterArray.length; j++) {
-                    if (counterArray[j] == maxCounter && counterArray[j] == counterArray[i]) {
+                    if (counterArray[j] == maxCounter && counterArray[i] == counterArray[j]) {
                         if (array[i] < array[j] && array[i] <= popularValue) {
                             popularValue = array[i];
                         }
@@ -49,7 +55,6 @@ public class Task9 {
                 }
             }
         }
-        System.out.println(Arrays.toString(counterArray));
-        System.out.println("Number: " + popularValue);
+        return popularValue;
     }
 }
