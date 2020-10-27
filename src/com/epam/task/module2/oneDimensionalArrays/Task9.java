@@ -5,18 +5,21 @@ import java.util.Random;
 
 public class Task9 {
     public static void main(String[] args) {
-        calculateNumber(9);
+        findPopularValue(createRandomArray());
     }
 
-    public static void calculateNumber(int n) {
+    public static int[] createRandomArray() {
 
         Random random = new Random();
-        int[] array = new int[n];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (random.nextInt(10) + 1);
-        }
+        int[] array = {5, 3, 9, 4, 3, 8, 7, 1, 1};
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = (random.nextInt(10) + 1);
+//        }
         System.out.println(Arrays.toString(array));
+        return array;
+    }
 
+    public static void findPopularValue (int [] array){
         int[] counterArray = new int[array.length];
         int popularNumber = array[0];
         for (int i = 0; i < array.length; i++) {
