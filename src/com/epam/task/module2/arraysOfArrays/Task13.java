@@ -2,12 +2,12 @@ package com.epam.task.module2.arraysOfArrays;
 
 import java.util.Random;
 
-public class Task12 {
+public class Task13 {
     public static void main(String[] args) {
-        int [][] matrix = buildDualArray(5,5);
-        sortMatrixByLineMax(matrix);
+        int [][] matrix = buildDualArray(6,5);
+        sortMatrixByColumnMax(matrix);
         System.out.println();
-        sortMatrixByLineMin(matrix);
+        sortMatrixByColumnMin(matrix);
     }
 
     public static int[][] buildDualArray(int x, int y) {
@@ -24,7 +24,7 @@ public class Task12 {
         return matrix;
     }
 
-    public static void sortMatrixByLineMax(int[][] matrix) {
+    public static void sortMatrixByColumnMax(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = matrix[i].length - 1; j >= 0; j--) {
                 for (int k = 0; k < j; k++) {
@@ -40,7 +40,7 @@ public class Task12 {
         }
     }
 
-    public static void sortMatrixByLineMin(int[][] matrix) {
+    public static void sortMatrixByColumnMin(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = matrix[i].length - 1; j >= 0; j--) {
                 for (int k = 0; k < j; k++) {
