@@ -6,8 +6,7 @@ import java.util.Random;
 public class Task9 {
     public static void main(String[] args) {
         int[] randomArray = createRandomArray(9);
-        int[] counterArray = createCounterArray(randomArray);
-        System.out.printf("Popular value: %d", findPopularValue(randomArray, counterArray));
+        System.out.printf("Popular value: %d", findPopularValue(randomArray));
     }
 
     public static int[] createRandomArray(int size) {
@@ -21,7 +20,12 @@ public class Task9 {
         return array;
     }
 
-    public static int[] createCounterArray(int[] array) {
+    public static int findPopularValue(int[] array) {
+        int[] counterArray = createCounterArray(array);
+        return findPopularValue(array, counterArray);
+    }
+
+    private static int[] createCounterArray(int[] array) {
         int[] counterArray = new int[array.length];
 
         for (int i = 0; i < array.length; i++) {
@@ -36,7 +40,7 @@ public class Task9 {
         return counterArray;
     }
 
-    public static int findPopularValue(int[] array, int[] counterArray) {
+    private static int findPopularValue(int[] array, int[] counterArray) {
         int popularValue = 0;
         int maxCounter = counterArray[0];
         for (int i = 0; i < counterArray.length; i++) {

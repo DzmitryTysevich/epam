@@ -12,29 +12,29 @@ public class Task8 {
     public static void calculateNumber(int n) {
 
         Random random = new Random();
-        int[] a = new int[n];
-        for (int i = 0; i < a.length; i++) {
-            a[i] = (random.nextInt(10) + 1);
+        int[] array = new int[n];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (random.nextInt(10) + 1);
         }
-        int min = a[0];
-        for (int j : a) {
+        int min = array[0];
+        for (int j : array) {
             if (j <= min) {
                 min = j;
             }
         }
         int counter = 0;
-        for (int j : a) {
+        for (int j : array) {
             if (j == min) {
                 counter++;
             }
         }
-        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(array));
 
-        int[] b = new int[a.length - counter];
+        int[] b = new int[array.length - counter];
         int indexB = 0;
-        for (int j = 0; j < a.length; j++) {
-            if (a[j] != min) {
-                b[indexB] = a[j];
+        for (int j = 0; j < array.length; j++) {
+            if (array[j] != min) {
+                b[indexB] = array[j];
                 indexB++;
             }
         }
