@@ -6,39 +6,53 @@ import java.util.Random;
 public class Task8 {
 
     public static void main(String[] args) {
-        calculateNumber(10);
+        int[] randomArray = createRandomArray(9);
+        createNewSequency(randomArray);
     }
 
-    public static void calculateNumber(int n) {
+    public static int[] createRandomArray(int size) {
 
         Random random = new Random();
-        int[] a = new int[n];
-        for (int i = 0; i < a.length; i++) {
-            a[i] = (random.nextInt(10) + 1);
+        int[] array = new int[size];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (random.nextInt(10) + 1);
         }
-        int min = a[0];
-        for (int j : a) {
+        System.out.println(Arrays.toString(array));
+        return array;
+    }
+
+    private static int findMinNumber(int[] array) {
+
+        int min = array[0];
+        for (int j : array) {
             if (j <= min) {
                 min = j;
             }
         }
+        return min;
+    }
+
+    private static int findMinCounter(int[] array, int min) {
         int counter = 0;
-        for (int j : a) {
+        for (int j : array) {
             if (j == min) {
                 counter++;
             }
         }
-        System.out.println(Arrays.toString(a));
+        return counter;
+    }
 
-        int[] b = new int[a.length - counter];
+    private static void createNewSequency(int[] array) {
+        int min = findMinNumber(array);
+        int minCounter = findMinCounter(array, min);
+        int[] sequency = new int[array.length - minCounter];
         int indexB = 0;
-        for (int j = 0; j < a.length; j++) {
-            if (a[j] != min) {
-                b[indexB] = a[j];
+        for (int number : array) {
+            if (number != min) {
+                sequency[indexB] = number;
                 indexB++;
             }
         }
-        System.out.println(Arrays.toString(b));
-        System.out.println("Min number: " + min + ", Counter: " + counter);
+        System.out.println(Arrays.toString(sequency));
     }
 }
