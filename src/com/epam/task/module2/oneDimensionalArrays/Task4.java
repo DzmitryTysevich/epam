@@ -11,30 +11,33 @@ public class Task4 {
 
     public static void calculate(int n) {
         Random random = new Random();
-        int[] a = new int[n];
-        for (int i = 0; i < a.length; i++) {
-            a[i] = random.nextInt(10) + 3;
+        int[] array = new int[n];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(10) + 3;
         }
-        System.out.println("Array numbers: " + Arrays.toString(a));
+        System.out.println("Array numbers: " + Arrays.toString(array));
 
-        int max = a[0];
-        int min = a[0];
-        for (int j : a) {
-            if (j >= max) {
-                max = j;
-            } else {
+        int max = array[0];
+        int min = array[0];
+        for (int k : array) {
+            if (k > max) {
+                max = k;
+            }
+        }
+
+        for (int j : array) {
+            if (j < min) {
                 min = j;
             }
         }
-
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == max) {
-                a[i] = min;
-            } else {
-                a[i] = max;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == max) {
+                array[i] = min;
+            } else if (array[i] == min) {
+                array[i] = max;
             }
         }
-        System.out.println("Array numbers: " + Arrays.toString(a));
+        System.out.println("Array numbers: " + Arrays.toString(array));
         System.out.println(max + " " + min);
     }
 }

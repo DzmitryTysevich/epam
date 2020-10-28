@@ -15,7 +15,7 @@ public class Task6 {
         int sumNumber = 0;
         for (int i = 0; i < a.length; i++) {
             a[i] = random.nextInt(10) + 1;
-            if (calculateSimpleNum(i)) {
+            if (isSimpleNum(i)) {
                 sumNumber += a[i];
             }
         }
@@ -23,14 +23,14 @@ public class Task6 {
         System.out.println("Array numbers: " + Arrays.toString(a));
     }
 
-    public static boolean calculateSimpleNum(int j) {
-        if (j <= 1) {
+    private static boolean isSimpleNum(int number) {
+        if (number <= 1) {
             return false;
-        } else if (j == 2) {
+        } else if (number == 2) {
             return true;
         } else {
-            for (int i = 2; i < j; i++) {
-                if (j % i == 0)
+            for (int i = 2; i < number; i++) {
+                if (number % i == 0)
                     return false;
             }
         }

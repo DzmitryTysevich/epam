@@ -6,53 +6,39 @@ import java.util.Random;
 public class Task8 {
 
     public static void main(String[] args) {
-        int[] randomArray = createRandomArray(9);
-        createNewSequency(randomArray);
+        calculateNumber(10);
     }
 
-    public static int[] createRandomArray(int size) {
+    public static void calculateNumber(int n) {
 
         Random random = new Random();
-        int[] array = new int[size];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (random.nextInt(10) + 1);
+        int[] a = new int[n];
+        for (int i = 0; i < a.length; i++) {
+            a[i] = (random.nextInt(10) + 1);
         }
-        System.out.println(Arrays.toString(array));
-        return array;
-    }
-
-    private static int findMinNumber(int[] array) {
-
-        int min = array[0];
-        for (int j : array) {
+        int min = a[0];
+        for (int j : a) {
             if (j <= min) {
                 min = j;
             }
         }
-        return min;
-    }
-
-    private static int findMinCounter(int[] array, int min) {
         int counter = 0;
-        for (int j : array) {
+        for (int j : a) {
             if (j == min) {
                 counter++;
             }
         }
-        return counter;
-    }
+        System.out.println(Arrays.toString(a));
 
-    private static void createNewSequency(int[] array) {
-        int min = findMinNumber(array);
-        int minCounter = findMinCounter(array, min);
-        int[] sequency = new int[array.length - minCounter];
+        int[] b = new int[a.length - counter];
         int indexB = 0;
-        for (int number : array) {
-            if (number != min) {
-                sequency[indexB] = number;
+        for (int j = 0; j < a.length; j++) {
+            if (a[j] != min) {
+                b[indexB] = a[j];
                 indexB++;
             }
         }
-        System.out.println(Arrays.toString(sequency));
+        System.out.println(Arrays.toString(b));
+        System.out.println("Min number: " + min + ", Counter: " + counter);
     }
 }
