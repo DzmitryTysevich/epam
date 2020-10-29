@@ -1,12 +1,12 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import com.epam.task.Utils.Matrix.BuildRandomMatrix;
+import com.epam.task.Utils.Matrix.MatrixUtil;
 
 import java.util.Arrays;
 
 public class Task9 {
     public static void main(String[] args) {
-        int[][] randomMatrix = BuildRandomMatrix.buildRandomMatrix();
+        int[][] randomMatrix = MatrixUtil.buildRandomMatrix();
         System.out.println(Arrays.toString(calculateSumValue(randomMatrix)));
         System.out.printf("Column with max sum: %d", findColumnWithMaxSum(calculateSumValue(randomMatrix)));
     }

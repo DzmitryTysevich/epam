@@ -1,10 +1,10 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import com.epam.task.Utils.Matrix.BuildRandomMatrix;
+import com.epam.task.Utils.Matrix.MatrixUtil;
 
 public class Task1 {
     public static void main(String[] args) {
-        giveOddColumn(BuildRandomMatrix.buildRandomMatrix());
+        giveOddColumn(MatrixUtil.buildRandomMatrix());
     }
 
     public static void giveOddColumn(int[][] matrix) {

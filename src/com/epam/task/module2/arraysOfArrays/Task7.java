@@ -1,8 +1,10 @@
 package com.epam.task.module2.arraysOfArrays;
 
+import com.epam.task.Utils.Matrix.InputUtil;
+
 public class Task7 {
     public static void main(String[] args) {
-        squareMatrix(8);
+        squareMatrix(InputUtil.InPutValue("Enter size: "));
     }
 
     public static void squareMatrix(int size) {

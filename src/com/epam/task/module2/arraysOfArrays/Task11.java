@@ -1,14 +1,10 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import com.epam.task.Utils.Matrix.BuildRandomMatrix;
-
-import java.sql.SQLOutput;
-import java.util.Arrays;
-import java.util.Random;
+import com.epam.task.Utils.Matrix.MatrixUtil;
 
 public class Task11 {
     public static void main(String[] args) {
-        int[][] randomMatrix = BuildRandomMatrix.buildRandomMatrix();
+        int[][] randomMatrix = MatrixUtil.buildRandomMatrix();
        findLineWithValue(randomMatrix);
     }
 

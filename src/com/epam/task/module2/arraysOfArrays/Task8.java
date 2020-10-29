@@ -1,13 +1,14 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import com.epam.task.Utils.Matrix.BuildRandomMatrix;
-import com.epam.task.Utils.Matrix.PrintMatrix;
+import com.epam.task.Utils.Matrix.InputUtil;
+import com.epam.task.Utils.Matrix.MatrixUtil;
+import com.epam.task.Utils.Matrix.PrintMatrixUtil;
 
 public class Task8 {
     public static void main(String[] args) {
-        int[][] randomMatrix = BuildRandomMatrix.buildRandomMatrix();
-        changeColumnMatrix(randomMatrix, 2, 4);
-        PrintMatrix.printMatrix(randomMatrix);
+        int[][] randomMatrix = MatrixUtil.buildRandomMatrix();
+        changeColumnMatrix(randomMatrix, InputUtil.InPutValue("Enter first column: "), InputUtil.InPutValue("Enter second column: "));
+        PrintMatrixUtil.printMatrix(randomMatrix);
     }
 
     public static int[][] changeColumnMatrix(int[][] matrix, int firstColumn, int secondColumn) {

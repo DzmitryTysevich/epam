@@ -1,10 +1,10 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import com.epam.task.Utils.Matrix.BuildRandomMatrixWithMinusValue;
+import com.epam.task.Utils.Matrix.MatrixUtil;
 
 public class Task10 {
     public static void main(String[] args) {
-        int[][] randomMatrix = BuildRandomMatrixWithMinusValue.buildRandomMatrixWithMinusValue();
+        int[][] randomMatrix = MatrixUtil.buildRandomMatrixWithMinusValue();
         findMainPositiveValue(randomMatrix);
     }
 

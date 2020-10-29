@@ -1,27 +1,13 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import java.util.Random;
+import com.epam.task.Utils.Matrix.MatrixUtil;
 
 public class Task12 {
     public static void main(String[] args) {
-        int [][] matrix = buildDualArray(5,5);
+        int[][] matrix = MatrixUtil.buildRandomMatrix();
         sortMatrixByLineMax(matrix);
         System.out.println();
         sortMatrixByLineMin(matrix);
-    }
-
-    public static int[][] buildDualArray(int x, int y) {
-        Random random = new Random();
-        int[][] matrix = new int[x][y];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = random.nextInt(9);
-                System.out.printf("%d  ", matrix[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println();
-        return matrix;
     }
 
     public static void sortMatrixByLineMax(int[][] matrix) {
@@ -34,7 +20,7 @@ public class Task12 {
                         matrix[i][k + 1] = temp;
                     }
                 }
-                System.out.printf("%d  ", matrix[i][j]);
+                System.out.printf("\t%d", matrix[i][j]);
             }
             System.out.println();
         }
@@ -50,7 +36,7 @@ public class Task12 {
                         matrix[i][k + 1] = temp;
                     }
                 }
-                System.out.printf("%d  ", matrix[i][j]);
+                System.out.printf("\t%d", matrix[i][j]);
             }
             System.out.println();
         }

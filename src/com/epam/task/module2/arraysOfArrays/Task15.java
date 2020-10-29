@@ -1,25 +1,11 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import java.util.Random;
+import com.epam.task.Utils.Matrix.MatrixUtil;
 
 public class Task15 {
     public static void main(String[] args) {
-        int[][] matrix = buildDualArray(8, 8);
-        changeUnevenElementMatrix(matrix);
-    }
-
-    public static int[][] buildDualArray(int line, int column) {
-        Random random = new Random();
-        int[][] matrix = new int[line][column];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = random.nextInt(9) + 1;
-                System.out.printf("%d  ", matrix[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println();
-        return matrix;
+        int[][] matrix = MatrixUtil.buildRandomMatrix();
+        swapOddElementMatrix(matrix);
     }
 
     private static int findMaxElementMatrix(int[][] matrix) {
@@ -34,7 +20,7 @@ public class Task15 {
         return maxElement;
     }
 
-    public static void changeUnevenElementMatrix(int[][] matrix) {
+    public static void swapOddElementMatrix(int[][] matrix) {
         int maxElement = findMaxElementMatrix(matrix);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 1; j < matrix[i].length; j++) {
@@ -45,7 +31,7 @@ public class Task15 {
         }
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                System.out.printf("%d  ", matrix[i][j]);
+                System.out.printf("\t%d", matrix[i][j]);
             }
             System.out.println();
         }
