@@ -1,34 +1,24 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import java.util.Random;
+import com.epam.task.Utils.Matrix.BuildRandomMatrix;
 
 public class Task1 {
     public static void main(String[] args) {
-        calculate(6, 6);
+        giveOddColumn(BuildRandomMatrix.buildRandomMatrix());
     }
 
-    public static void calculate(int x, int y) {
-        Random random = new Random();
-        int[][] twoDimmArray = new int[x][y];
-        for (int i = 0; i < twoDimmArray.length; i++) {
-            for (int j = 0; j < twoDimmArray.length; j++) {
-                twoDimmArray[i][j] = random.nextInt(10);
-                System.out.print(" " + twoDimmArray[i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println();
+    public static void giveOddColumn(int[][] matrix) {
         int counter = 0;
-        for (int i = 0; i < twoDimmArray.length; i++) {
-            for (int j = 1; j < twoDimmArray.length; j++) {
-                if (j % 2 != 0 && twoDimmArray[0][j] > twoDimmArray[twoDimmArray.length - 1][j]) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 1; j < matrix.length; j++) {
+                if (j % 2 != 0 && matrix[0][j] > matrix[matrix.length - 1][j]) {
                     counter++;
-                    System.out.print(" " + twoDimmArray[i][j] + " ");
+                    System.out.print(" " + matrix[i][j] + " ");
                 }
             }
             System.out.println();
         }
-        if(counter==0){
+        if (counter == 0) {
             System.out.println("No coincidence!");
         }
     }

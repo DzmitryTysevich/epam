@@ -1,24 +1,14 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import java.util.Random;
+import com.epam.task.Utils.Matrix.BuildRandomMatrixWithMinusValue;
 
 public class Task10 {
     public static void main(String[] args) {
-        calculate(6, 6);
+        int[][] randomMatrix = BuildRandomMatrixWithMinusValue.buildRandomMatrixWithMinusValue();
+        findMainPositiveValue(randomMatrix);
     }
 
-    public static void calculate(int x, int y) {
-        Random random = new Random();
-        int[][] matrix = new int[x][y];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = random.nextInt(10) - 5;
-                System.out.printf(" %d ", matrix[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println();
-        System.out.println("Result: ");
+    public static int[][] findMainPositiveValue(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (i == j && matrix[i][j] > 0) {
@@ -26,5 +16,6 @@ public class Task10 {
                 }
             }
         }
+        return matrix;
     }
 }

@@ -2,26 +2,22 @@ package com.epam.task.module2.arraysOfArrays;
 
 public class Task6 {
     public static void main(String[] args) {
-        calculate(8);
+        squareMatrix(7);
     }
 
-    public static void calculate(int n) {
-        if (n % 2 == 0) {
-            int[][] twoDimmArray = new int[n][n];
-            for (int i = 0; i < twoDimmArray.length; i++) {
-                for (int j = 0; j < twoDimmArray.length; j++) {
-                    if (j >= i && j <= twoDimmArray.length - i - 1) {
-                        twoDimmArray[i][j] = 1;
-                    }
-                    if (j <= i && j >= twoDimmArray.length - i - 1) {
-                        twoDimmArray[i][j] = 1;
-                    }
-                    System.out.print(" " + twoDimmArray[i][j] + " ");
+    public static void squareMatrix(int size) {
+        int[][] matrix = new int[size][size];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                if (j >= i && j <= matrix.length - i - 1) {
+                    matrix[i][j] = 1;
                 }
-                System.out.println();
+                if (j <= i && j >= matrix.length - i - 1) {
+                    matrix[i][j] = 1;
+                }
+                System.out.print(" " + matrix[i][j] + " ");
             }
-        } else {
-            System.out.println("Input wrong");
+            System.out.println();
         }
     }
 }

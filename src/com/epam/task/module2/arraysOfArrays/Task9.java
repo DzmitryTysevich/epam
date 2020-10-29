@@ -1,31 +1,27 @@
 package com.epam.task.module2.arraysOfArrays;
 
+import com.epam.task.Utils.Matrix.BuildRandomMatrix;
+
 import java.util.Arrays;
-import java.util.Random;
 
 public class Task9 {
     public static void main(String[] args) {
-        calculate(6, 5);
+        int[][] randomMatrix = BuildRandomMatrix.buildRandomMatrix();
+        System.out.println(Arrays.toString(calculateSumValue(randomMatrix)));
+        System.out.printf("Column with max sum: %d", findColumnWithMaxSum(calculateSumValue(randomMatrix)));
     }
 
-    public static void calculate(int x, int y) {
-        Random random = new Random();
-        int[][] matrix = new int[x][y];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = random.nextInt(10);
-                System.out.printf("%d ", matrix[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println();
-
+    public static int[] calculateSumValue(int[][] matrix) {
         int[] sum = new int[matrix[0].length];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 sum[j] += matrix[i][j];
             }
         }
+        return sum;
+    }
+
+    public static int findColumnWithMaxSum(int[] sum) {
         int max = sum[0];
         int result = 0;
         for (int i = 0; i < sum.length; i++) {
@@ -34,7 +30,6 @@ public class Task9 {
                 result = i;
             }
         }
-        System.out.println(Arrays.toString(sum));
-        System.out.println("Result = " + result);
+        return result;
     }
 }

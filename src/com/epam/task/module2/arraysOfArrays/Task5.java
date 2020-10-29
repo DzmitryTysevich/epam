@@ -4,25 +4,21 @@ import java.sql.SQLOutput;
 
 public class Task5 {
     public static void main(String[] args) {
-        calculate(8);
+        squareMatrix(8);
     }
 
-    public static void calculate(int n) {
-        if (n % 2 == 0) {
-            int[][] twoDimmArray = new int[n][n];
-            for (int i = 0; i < twoDimmArray.length; i++) {
-                for (int j = 0; j < twoDimmArray.length - i; j++) {
-                    twoDimmArray[i][j] = i + 1;
-                }
+    public static void squareMatrix(int size) {
+        int[][] matrix = new int[size][size];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length - i; j++) {
+                matrix[i][j] = i + 1;
             }
-            for (int i = 0; i < twoDimmArray.length; i++) {
-                for (int j = 0; j < twoDimmArray.length; j++) {
-                    System.out.print(" " + twoDimmArray[i][j] + " ");
-                }
-                System.out.println();
+        }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                System.out.print(" " + matrix[i][j] + " ");
             }
-        } else {
-            System.out.println("Input wrong");
+            System.out.println();
         }
     }
 }
