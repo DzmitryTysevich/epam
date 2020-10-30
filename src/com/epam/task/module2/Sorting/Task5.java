@@ -12,18 +12,18 @@ public class Task5 {
         System.out.println(Arrays.toString(sortToShellArray(unsortedArray)));
     }
 
-    public static int [] sortToShellArray(int[] array) {
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < array[i - 1]) {
-                SwapUtil.swapValueArray(array, i, i - 1);
-                for (int z = i - 1; (z - 1) >= 0; z--) {
-                    if (array[z] < array[z - 1]) {
-                        SwapUtil.swapValueArray(array, z, z - 1);
-                    } else {
-                        break;
+    public static int[] sortToShellArray(int[] array) {
+        int gap = array.length / 2;
+        while (gap >= 1) {
+            for (int right = 0; right < array.length; right++) {
+                for (int j = right - gap; j >= 0; j -= gap) {
+                    if (array[j] > array[j + gap]) {
+                        SwapUtil.swapValueArray(array, j, j + gap);
                     }
                 }
             }
-        }return array;
+            gap = gap / 2;
+        }
+        return array;
     }
 }
