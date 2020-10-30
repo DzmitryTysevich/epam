@@ -4,7 +4,7 @@ import com.epam.task.Utils.Matrix.InputUtil;
 
 public class Task7 {
     public static void main(String[] args) {
-        squareMatrix(InputUtil.InPutValue("Enter size: "));
+        squareMatrix(InputUtil.inPutValue("Enter size: "));
     }
 
     public static void squareMatrix(int size) {

@@ -6,9 +6,9 @@ import com.epam.task.Utils.Matrix.MatrixUtil;
 public class Task3 {
     public static void main(String[] args) {
         int[][] randomMatrix = MatrixUtil.buildRandomMatrix();
-        giveLineMatrix(randomMatrix, InputUtil.InPutValue("Enter k: "));
+        giveLineMatrix(randomMatrix, InputUtil.inPutValue("Enter k: "));
         System.out.println();
-        giveColumnMatrix(randomMatrix, InputUtil.InPutValue("Enter p: "));
+        giveColumnMatrix(randomMatrix, InputUtil.inPutValue("Enter p: "));
     }
 
     public static void giveLineMatrix(int[][] matrix, int k) {

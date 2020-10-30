@@ -7,7 +7,7 @@ import com.epam.task.Utils.Matrix.PrintMatrixUtil;
 public class Task8 {
     public static void main(String[] args) {
         int[][] randomMatrix = MatrixUtil.buildRandomMatrix();
-        changeColumnMatrix(randomMatrix, InputUtil.InPutValue("Enter first column: "), InputUtil.InPutValue("Enter second column: "));
+        changeColumnMatrix(randomMatrix, InputUtil.inPutValue("Enter first column: "), InputUtil.inPutValue("Enter second column: "));
         PrintMatrixUtil.printMatrix(randomMatrix);
     }
 

@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class MatrixUtil {
     public static int[][] buildRandomMatrix() {
-        int line = InputUtil.InPutValue("Enter line: ");
-        int column = InputUtil.InPutValue("Enter column: ");
-        int randomSize = InputUtil.InPutValue("Enter random size: ");
+        int line = InputUtil.inPutValue("Enter line: ");
+        int column = InputUtil.inPutValue("Enter column: ");
+        int randomSize = InputUtil.inPutValue("Enter random size: ");
         Random random = new Random();
         int[][] matrix = new int[line][column];
         for (int i = 0; i < matrix.length; i++) {
@@ -21,9 +21,9 @@ public class MatrixUtil {
     }
 
     public static int[][] buildRandomMatrixWithMinusValue() {
-        int line = InputUtil.InPutValue("Enter line: ");
-        int column = InputUtil.InPutValue("Enter column: ");
-        int randomSize = InputUtil.InPutValue("Enter random size: ");
+        int line = InputUtil.inPutValue("Enter line: ");
+        int column = InputUtil.inPutValue("Enter column: ");
+        int randomSize = InputUtil.inPutValue("Enter random size: ");
         Random random = new Random();
         int[][] matrix = new int[line][column];
         for (int i = 0; i < matrix.length; i++) {
@@ -38,8 +38,8 @@ public class MatrixUtil {
     }
 
     public static int[][] buildFillMatrix() {
-        int line = InputUtil.InPutValue("Enter line: ");
-        int column = InputUtil.InPutValue("Enter column: ");
+        int line = InputUtil.inPutValue("Enter line: ");
+        int column = InputUtil.inPutValue("Enter column: ");
         int[][] matrix = new int[line][column];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
