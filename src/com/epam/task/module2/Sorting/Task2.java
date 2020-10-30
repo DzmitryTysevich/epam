@@ -1,7 +1,7 @@
 package com.epam.task.module2.Sorting;
 
-import com.epam.task.Utils.Matrix.ArrayUtil;
-import com.epam.task.Utils.Matrix.SwapUtil;
+import com.epam.task.Utils.ArrayUtil;
+import com.epam.task.Utils.SwapUtil;
 
 import java.util.Arrays;
 
@@ -12,16 +12,16 @@ public class Task2 {
         System.out.println(Arrays.toString(sortChoiceArray(unsortedArray)));
     }
 
-    public static int[] sortChoiceArray(int[] arrayToSort) {
-        for (int i = 0; i < arrayToSort.length - 1; i++) {
+    public static int[] sortChoiceArray(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
             int indexMin = i;
-            for (int j = i; j < arrayToSort.length; j++) {
-                if (arrayToSort[indexMin] > arrayToSort[j]) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[indexMin] > array[j]) {
                     indexMin = j;
                 }
             }
-            SwapUtil.swapValueArray(arrayToSort, i, indexMin);
+            SwapUtil.swapValueArray(array, i, indexMin);
         }
-        return arrayToSort;
+        return array;
     }
 }

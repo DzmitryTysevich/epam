@@ -1,4 +1,4 @@
-package com.epam.task.Utils.Matrix;
+package com.epam.task.Utils;
 
 import java.util.Random;
 

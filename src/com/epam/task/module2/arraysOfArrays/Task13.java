@@ -1,7 +1,7 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import com.epam.task.Utils.Matrix.PrintMatrixUtil;
-import com.epam.task.Utils.Matrix.MatrixUtil;
+import com.epam.task.Utils.PrintMatrixUtil;
+import com.epam.task.Utils.MatrixUtil;
 
 import java.util.Arrays;
 

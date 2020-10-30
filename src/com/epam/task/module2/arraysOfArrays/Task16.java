@@ -1,6 +1,6 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import com.epam.task.Utils.Matrix.PrintMatrixUtil;
+import com.epam.task.Utils.PrintMatrixUtil;
 
 public class Task16 {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package com.epam.task.module2.Sorting;
 
-import com.epam.task.Utils.Matrix.ArrayUtil;
-import com.epam.task.Utils.Matrix.InputUtil;
+import com.epam.task.Utils.ArrayUtil;
+import com.epam.task.Utils.InputUtil;
 
 import java.util.Arrays;
 

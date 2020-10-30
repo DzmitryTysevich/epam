@@ -1,6 +1,6 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import com.epam.task.Utils.Matrix.InputUtil;
+import com.epam.task.Utils.InputUtil;
 
 public class Task7 {
     public static void main(String[] args) {
