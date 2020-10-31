@@ -3,30 +3,30 @@ package com.epam.task.module2.decompositionUsingMethods;
 import static com.epam.task.Utils.InputUtil.*;
 import static com.epam.task.Utils.NumberOperation.*;
 
-public class Task1 {
+public class Task2 {
     public static void main(String[] args) {
         int numberA = inPutValue("Enter A: ");
         int numberB = inPutValue("Enter B: ");
-        System.out.printf("Min common multiple: %d", findMinCommonMultipleValue(numberA, numberB));
-        System.out.println();
-        System.out.printf("Max common divider: %d", findMaxCommonDividerValue(numberA, numberB));
+        int numberC = inPutValue("Enter C: ");
+        int numberD = inPutValue("Enter D: ");
+        System.out.printf("Max common divider: %d", findMaxCommonDividerValue(numberA, numberB, numberC, numberD));
     }
 
-    public static int findMaxCommonDividerValue(int numberA, int numberB) {
+    public static int findMaxCommonDividerValue(int numberA, int numberB, int numberC, int numberD) {
         int[] arrayA = searchSimpleNumbers(numberA);
         int[] arrayB = searchSimpleNumbers(numberB);
-        int[] doubleArray = findEqualValue(Math.min(numberA, numberB), arrayA, arrayB);
+        int[] arrayC = searchSimpleNumbers(numberC);
+        int[] arrayD = searchSimpleNumbers(numberD);
+        int minSize = Math.min(Math.min(numberA, numberB), Math.min(numberC, numberD));
+        int[] doubleArray = findEqualValue(minSize, arrayA, arrayB, arrayC, arrayD);
         return findMaxCommonDividerValue(doubleArray);
     }
 
-    public static int findMinCommonMultipleValue(int numberA, int numberB) {
-        return numberA * numberB / findMaxCommonDividerValue(numberA, numberB);
-    }
-
-    private static int[] findEqualValue(int size, int[] arrayA, int[] arrayB) {
+    private static int[] findEqualValue(int size, int[] arrayA, int[] arrayB, int[] arrayC, int[] arrayD) {
         int[] equalValueArray = new int[size];
         for (int i = 0; i < size; i++) {
-            if (arrayA[i] == arrayB[i] && arrayA[i] != 0) {
+            if (arrayA[i] == arrayB[i] && arrayC[i] == arrayD[i] && arrayA[i] == arrayD[i] &&
+                    arrayA[i] != 0 && arrayC[i] != 0) {
                 equalValueArray[i] = arrayA[i];
             }
         }

@@ -10,7 +10,7 @@ public class MatrixUtil {
         Random random = new Random();
         int[][] matrix = new int[line][column];
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 matrix[i][j] = random.nextInt(randomSize);
                 System.out.print("\t" + matrix[i][j]);
             }
@@ -27,7 +27,7 @@ public class MatrixUtil {
         Random random = new Random();
         int[][] matrix = new int[line][column];
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 matrix[i][j] = random.nextInt(randomSize) - 3;
                 System.out.print("\t" + matrix[i][j]);
             }
@@ -42,7 +42,22 @@ public class MatrixUtil {
         int column = InputUtil.inPutValue("Enter column: ");
         int[][] matrix = new int[line][column];
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print("\t" + matrix[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        return matrix;
+    }
+
+    public static double[][] buildRandomPointsMatrix() {
+        Random random = new Random();
+        double[][] matrix = new double[InputUtil.inPutValue("Enter amount points: ")][2];
+        int randomSize = InputUtil.inPutValue("Enter random size: ");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = random.nextInt(randomSize);
                 System.out.print("\t" + matrix[i][j]);
             }
             System.out.println();
