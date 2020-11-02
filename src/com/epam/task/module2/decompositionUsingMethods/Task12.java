@@ -10,49 +10,48 @@ public class Task12 {
         System.out.println(Arrays.toString(array));
     }
 
-    public static int[] createArray(int k, int n) {
-        int[] arrayNumbers = new int[k];
-        int m = 0;
+    public static int[] createArray(int sumNumberK, int numberN) {
+        int[] arrayNumbers = new int[sumNumberK];
+        int selectionUnknownNumber = 0;
         int newLengthArray = 0;
-        for (int i = 0; i < arrayNumbers.length; i++) {
+        for (int numberReader = 0; numberReader < arrayNumbers.length; numberReader++) {
             do {
-                m++;
+                selectionUnknownNumber++;
             }
-            while (findSummaDigitsOfNumber(m) != k);
-            if (m < n)
-                arrayNumbers[i] = m;
-            if (arrayNumbers[i] != 0)
+            while (findSummaDigitsOfNumber(selectionUnknownNumber) != sumNumberK);
+            if (selectionUnknownNumber < numberN)
+                arrayNumbers[numberReader] = selectionUnknownNumber;
+            if (arrayNumbers[numberReader] != 0)
                 newLengthArray++;
         }
         return Arrays.copyOf(arrayNumbers, newLengthArray);
-
     }
 
-    private static int findSummaDigitsOfNumber(int number) {
+    private static int findSummaDigitsOfNumber(int unknownNumber) {
         int summaDigits = 0;
-        int numberLength = findLength(number);
-        int[] arrayOfDigits = findDigitsNumber(number);
-        for (int i = 0; i < numberLength; i++) {
-            summaDigits += arrayOfDigits[i];
+        int numberLength = getLengthArray(unknownNumber);
+        int[] arrayOfDigits = getDigitsNumber(unknownNumber);
+        for (int index = 0; index < numberLength; index++) {
+            summaDigits += arrayOfDigits[index];
         }
         return summaDigits;
     }
 
-    private static int[] findDigitsNumber(int x) {
-        int[] array = new int[findLength(x)];
-        for (int i = array.length - 1; i >= 0; i--) {
-            int numberToArray = x % 10;
-            x /= 10;
-            array[i] = numberToArray;
+    private static int[] getDigitsNumber(int unknownNumber) {
+        int[] array = new int[getLengthArray(unknownNumber)];
+        for (int index = array.length - 1; index >= 0; index--) {
+            int numberToArray = unknownNumber % 10;
+            unknownNumber /= 10;
+            array[index] = numberToArray;
 
         }
         return array;
     }
 
-    private static int findLength(int number) {
+    private static int getLengthArray(int unknownNumber) {
         int numberLength = 0;
         int tempNum = 1;
-        while (tempNum <= number) {
+        while (tempNum <= unknownNumber) {
             tempNum *= 10;
             numberLength++;
         }
