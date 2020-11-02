@@ -9,15 +9,15 @@ public class Task3 {
     public static void main(String[] args) {
         int[] unsortedArray = ArrayUtil.getRandomArray();
         System.out.println(Arrays.toString(unsortedArray));
-        System.out.println(Arrays.toString(sortSwapArray(unsortedArray)));
+        System.out.println(Arrays.toString(getSortedArrayOfSwap(unsortedArray)));
 
     }
 
-    public static int[] sortSwapArray(int[] array) {
-        for (int i = array.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (array[j] > array[j + 1]) {
-                    SwapUtil.swapValueArray(array, j, j + 1);
+    public static int[] getSortedArrayOfSwap(int[] array) {
+        for (int startIndex = array.length - 1; startIndex > 0; startIndex--) {
+            for (int sortingIndex = 0; sortingIndex < startIndex; sortingIndex++) {
+                if (array[sortingIndex] > array[sortingIndex + 1]) {
+                    SwapUtil.swapValueArray(array, sortingIndex, sortingIndex + 1);
                 }
             }
         }

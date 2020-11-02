@@ -15,16 +15,16 @@ public class Task1 {
         swatArray(InputUtil.getInPutValue("Enter K: "), array1, array2);
     }
 
-    public static void swatArray(int k, int[] array1, int[] array2) {
+    public static void swatArray(int valueK, int[] array1, int[] array2) {
 
-        for (int i = 0; i < array2.length; i++) {
-            if (i > k) {
-                array1[i + array2.length] = array1[i];
+        for (int index = 0; index < array2.length; index++) {
+            if (index > valueK) {
+                array1[index + array2.length] = array1[index];
             }
         }
 
-        for (int i = k + 1, j = 0; i < array2.length + k + 1; i++, j++) {
-            array1[i] = array2[j];
+        for (int indexI = valueK + 1, indexJ = 0; indexI < array2.length + valueK + 1; indexI++, indexJ++) {
+            array1[indexI] = array2[indexJ];
         }
         System.out.println(Arrays.toString(array1));
     }

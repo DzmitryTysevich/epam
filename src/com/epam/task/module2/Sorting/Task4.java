@@ -12,14 +12,14 @@ public class Task4 {
     }
 
     public static void sortToInsertArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            int value = array[i];
-            int indexLocation = i - 1;
-            while (indexLocation >= 0 && array[indexLocation] > value) {
+        for (int startIndex = 0; startIndex < array.length; startIndex++) {
+            int tempValue = array[startIndex];
+            int indexLocation = startIndex - 1;
+            while (indexLocation >= 0 && array[indexLocation] > tempValue) {
                 array[indexLocation + 1] = array[indexLocation];
                 indexLocation--;
             }
-            array[indexLocation + 1] = value;
+            array[indexLocation + 1] = tempValue;
         }
         System.out.println(Arrays.toString(array));
     }
