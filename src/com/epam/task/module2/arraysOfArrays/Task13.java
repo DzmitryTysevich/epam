@@ -7,22 +7,22 @@ import java.util.Arrays;
 
 public class Task13 {
     public static void main(String[] args) {
-        int[][] matrix = MatrixUtil.buildRandomMatrix();
-        Arrays.toString(sortMatrixByColumnMax(matrix));
+        int[][] matrix = MatrixUtil.getRandomMatrix();
+        Arrays.toString(getSortedMatrixByColumnMax(matrix));
         PrintMatrixUtil.printMatrix(matrix);
         System.out.println();
-        Arrays.toString(sortMatrixByColumnMin(matrix));
+        Arrays.toString(getSortMatrixByColumnMin(matrix));
         PrintMatrixUtil.printMatrix(matrix);
     }
 
-    public static int[][] sortMatrixByColumnMax(int[][] matrix) {
-        for (int i = matrix.length - 1; i >= 0; i--) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                for (int k = 0; k < i; k++) {
-                    if (matrix[k][j] > matrix[k + 1][j]) {
-                        int temp = matrix[k][j];
-                        matrix[k][j] = matrix[k + 1][j];
-                        matrix[k + 1][j] = temp;
+    public static int[][] getSortedMatrixByColumnMax(int[][] matrix) {
+        for (int line = matrix.length - 1; line >= 0; line--) {
+            for (int column = 0; column < matrix[line].length; column++) {
+                for (int columnReader = 0; columnReader < line; columnReader++) {
+                    if (matrix[columnReader][column] > matrix[columnReader + 1][column]) {
+                        int tempValue = matrix[columnReader][column];
+                        matrix[columnReader][column] = matrix[columnReader + 1][column];
+                        matrix[columnReader + 1][column] = tempValue;
                     }
                 }
             }
@@ -30,14 +30,14 @@ public class Task13 {
         return matrix;
     }
 
-    public static int[][] sortMatrixByColumnMin(int[][] matrix) {
-        for (int i = matrix.length - 1; i >= 0; i--) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                for (int k = 0; k < i; k++) {
-                    if (matrix[k][j] < matrix[k + 1][j]) {
-                        int temp = matrix[k][j];
-                        matrix[k][j] = matrix[k + 1][j];
-                        matrix[k + 1][j] = temp;
+    public static int[][] getSortMatrixByColumnMin(int[][] matrix) {
+        for (int line = matrix.length - 1; line >= 0; line--) {
+            for (int column = 0; column < matrix[line].length; column++) {
+                for (int columnReader = 0; columnReader < line; columnReader++) {
+                    if (matrix[columnReader][column] < matrix[columnReader + 1][column]) {
+                        int tempValue = matrix[columnReader][column];
+                        matrix[columnReader][column] = matrix[columnReader + 1][column];
+                        matrix[columnReader + 1][column] = tempValue;
                     }
                 }
             }

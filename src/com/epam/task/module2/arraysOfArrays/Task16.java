@@ -4,46 +4,46 @@ import com.epam.task.Utils.PrintMatrixUtil;
 
 public class Task16 {
     public static void main(String[] args) {
-        int[][] matrix = buildFillMatrix(3);
-        fillMagicMatrixForUneven(matrix);
+        int[][] matrix = getFillMatrix(3);
+        printFillMagicMatrixForUneven(matrix);
         PrintMatrixUtil.printMatrix(matrix);
 
     }
 
-    public static int[][] buildFillMatrix(int size) {
-        int[][] matrix = new int[size][size];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
+    public static int[][] getFillMatrix(int lengthArray) {
+        int[][] matrix = new int[lengthArray][lengthArray];
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix[line].length; column++) {
             }
         }
         return matrix;
     }
 
-    public static void fillMagicMatrixForUneven(int[][] matrix) {
-        int i = matrix.length / 2;
-        int j = matrix.length - 1;
+    public static void printFillMagicMatrixForUneven(int[][] matrix) {
+        int line = matrix.length / 2;
+        int column = matrix.length - 1;
 
-        for (int num = 1; num <= matrix.length * matrix.length; ) {
-            if (i == -1 && j == matrix.length) {
-                i = 0;
-                j = matrix.length - 2;
+        for (int number = 1; number <= matrix.length * matrix.length; ) {
+            if (line == -1 && column == matrix.length) {
+                line = 0;
+                column = matrix.length - 2;
             } else {
-                if (i < 0) {
-                    i = matrix.length - 1;
+                if (line < 0) {
+                    line = matrix.length - 1;
                 }
-                if (j == matrix.length) {
-                    j = 0;
+                if (column == matrix.length) {
+                    column = 0;
                 }
             }
-            if (matrix[i][j] != 0) {
-                j -= 2;
-                i++;
+            if (matrix[line][column] != 0) {
+                column -= 2;
+                line++;
                 continue;
             } else {
-                matrix[i][j] = num++;
+                matrix[line][column] = number++;
             }
-            i--;
-            j++;
+            line--;
+            column++;
         }
     }
 }

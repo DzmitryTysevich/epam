@@ -4,15 +4,15 @@ import com.epam.task.Utils.MatrixUtil;
 
 public class Task10 {
     public static void main(String[] args) {
-        int[][] randomMatrix = MatrixUtil.buildRandomMatrixWithMinusValue();
-        findMainPositiveValue(randomMatrix);
+        int[][] randomMatrix = MatrixUtil.getRandomMatrixWithMinusValue();
+        getMainPositiveValue(randomMatrix);
     }
 
-    public static int[][] findMainPositiveValue(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (i == j && matrix[i][j] > 0) {
-                    System.out.printf("%d, ", matrix[i][j]);
+    public static int[][] getMainPositiveValue(int[][] matrix) {
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix[line].length; column++) {
+                if (line == column && matrix[line][column] > 0) {
+                    System.out.printf("\t%d, ", matrix[line][column]);
                 }
             }
         }

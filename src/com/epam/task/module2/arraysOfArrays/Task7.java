@@ -4,22 +4,22 @@ import com.epam.task.Utils.InputUtil;
 
 public class Task7 {
     public static void main(String[] args) {
-        squareMatrix(InputUtil.inPutValue("Enter size: "));
+        printSquareMatrix(InputUtil.getInPutValue("Enter size: "));
     }
 
-    public static void squareMatrix(int size) {
-        double[][] matrix = new double[size][size];
-        int counter = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                matrix[i][j] = Math.sin((Math.pow(i, 2) - Math.pow(j, 2)) / size);
-                if (matrix[i][j] > 0) {
-                    counter++;
+    public static void printSquareMatrix(int lengthArray) {
+        double[][] matrix = new double[lengthArray][lengthArray];
+        int summaPositiveElements = 0;
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix.length; column++) {
+                matrix[line][column] = Math.sin((Math.pow(line, 2) - Math.pow(column, 2)) / lengthArray);
+                if (matrix[line][column] > 0) {
+                    summaPositiveElements++;
                 }
-                System.out.printf(" %.2f ", matrix[i][j]);
+                System.out.printf("\t%.2f ", matrix[line][column]);
             }
             System.out.println();
         }
-        System.out.println("Counter: " + counter);
+        System.out.println("Summa: " + summaPositiveElements);
     }
 }

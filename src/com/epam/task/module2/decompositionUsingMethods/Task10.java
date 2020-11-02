@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Task10 {
     public static void main(String[] args) {
-        createArrayNumbers(InputUtil.inPutValue("Enter number: "));
+        createArrayNumbers(InputUtil.getInPutValue("Enter number: "));
 
     }
 

@@ -1,28 +1,28 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import com.epam.task.Utils.InputUtil;
-import com.epam.task.Utils.MatrixUtil;
-import com.epam.task.Utils.PrintMatrixUtil;
+import static com.epam.task.Utils.InputUtil.*;
+import static com.epam.task.Utils.MatrixUtil.*;
+import static com.epam.task.Utils.PrintMatrixUtil.*;
 
 public class Task8 {
     public static void main(String[] args) {
-        int[][] randomMatrix = MatrixUtil.buildRandomMatrix();
-        changeColumnMatrix(randomMatrix, InputUtil.inPutValue("Enter first column: "), InputUtil.inPutValue("Enter second column: "));
-        PrintMatrixUtil.printMatrix(randomMatrix);
+        int[][] randomMatrix = getRandomMatrix();
+        getChangeColumnMatrix(randomMatrix, getInPutValue("Enter first column: "), getInPutValue("Enter second column: "));
+        printMatrix(randomMatrix);
     }
 
-    public static int[][] changeColumnMatrix(int[][] matrix, int firstColumn, int secondColumn) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                if (j == firstColumn && firstColumn < secondColumn) {
-                    int temp = matrix[i][j];
-                    matrix[i][j] = matrix[i][secondColumn];
-                    matrix[i][secondColumn] = temp;
+    public static int[][] getChangeColumnMatrix(int[][] matrix, int firstColumn, int secondColumn) {
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix.length; column++) {
+                if (column == firstColumn && firstColumn < secondColumn) {
+                    int tempValue = matrix[line][column];
+                    matrix[line][column] = matrix[line][secondColumn];
+                    matrix[line][secondColumn] = tempValue;
                 }
-                if (j == secondColumn && firstColumn > secondColumn) {
-                    int temp = matrix[i][j];
-                    matrix[i][j] = matrix[i][firstColumn];
-                    matrix[i][firstColumn] = temp;
+                if (column == secondColumn && firstColumn > secondColumn) {
+                    int tempValue = matrix[line][column];
+                    matrix[line][column] = matrix[line][firstColumn];
+                    matrix[line][firstColumn] = tempValue;
                 }
             }
         }

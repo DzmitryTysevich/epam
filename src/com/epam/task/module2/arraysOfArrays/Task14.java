@@ -5,16 +5,16 @@ import com.epam.task.Utils.MatrixUtil;
 
 public class Task14 {
     public static void main(String[] args) {
-        int[][] randomMatrix = MatrixUtil.buildFillMatrix();
-        fillMatrixValue(randomMatrix);
+        int[][] randomMatrix = MatrixUtil.getFillMatrix();
+        getFillMatrixValue(randomMatrix);
         PrintMatrixUtil.printMatrix(randomMatrix);
     }
 
-    public static int[][] fillMatrixValue(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 1; j < matrix[i].length; j++) {
-                if (i <= j - 1) {
-                    matrix[i][j] = 1;
+    public static int[][] getFillMatrixValue(int[][] matrix) {
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 1; column < matrix[line].length; column++) {
+                if (line <= column - 1) {
+                    matrix[line][column] = 1;
                 }
             }
         }

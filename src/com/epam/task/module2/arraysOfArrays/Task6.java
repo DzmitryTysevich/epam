@@ -4,20 +4,20 @@ import com.epam.task.Utils.InputUtil;
 
 public class Task6 {
     public static void main(String[] args) {
-        squareMatrix(InputUtil.inPutValue("Enter size: "));
+        printSquareMatrix(InputUtil.getInPutValue("Enter size: "));
     }
 
-    public static void squareMatrix(int size) {
-        int[][] matrix = new int[size][size];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                if (j >= i && j <= matrix.length - i - 1) {
-                    matrix[i][j] = 1;
+    public static void printSquareMatrix(int lengthArray) {
+        int[][] matrix = new int[lengthArray][lengthArray];
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix.length; column++) {
+                if (column >= line && column <= matrix.length - line - 1) {
+                    matrix[line][column] = 1;
                 }
-                if (j <= i && j >= matrix.length - i - 1) {
-                    matrix[i][j] = 1;
+                if (column <= line && column >= matrix.length - line - 1) {
+                    matrix[line][column] = 1;
                 }
-                System.out.print(" " + matrix[i][j] + " ");
+                System.out.print("\t" + matrix[line][column] + " ");
             }
             System.out.println();
         }

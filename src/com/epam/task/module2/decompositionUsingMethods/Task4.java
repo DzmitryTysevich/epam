@@ -1,12 +1,12 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
-import static com.epam.task.Utils.MatrixUtil.buildRandomPointsMatrix;
+import static com.epam.task.Utils.MatrixUtil.getRandomPointsMatrix;
 import static java.lang.StrictMath.pow;
 import static java.lang.StrictMath.sqrt;
 
 public class Task4 {
     public static void main(String[] args) {
-        double[][] matrix = buildRandomPointsMatrix();
+        double[][] matrix = getRandomPointsMatrix();
         findDistanceBetweenPoints(matrix);
         System.out.println();
     }

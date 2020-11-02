@@ -3,17 +3,17 @@ package com.epam.task.Utils;
 import java.util.Random;
 
 public class ArrayUtil {
-    public static int[] fillArray() {
-        int[] array = new int[InputUtil.inPutValue("Enter size: ")];
+    public static int[] getFillArray() {
+        int[] array = new int[InputUtil.getInPutValue("Enter size: ")];
         return array;
     }
 
-    public static int[] randomArray() {
+    public static int[] getRandomArray() {
         Random random = new Random();
-        int[] randomArray = new int[InputUtil.inPutValue("Enter size array: ")];
-        int randomValue = InputUtil.inPutValue("Enter random value: ");
-        for (int i = 0; i < randomArray.length; i++) {
-            randomArray[i] = random.nextInt(randomValue);
+        int[] randomArray = new int[InputUtil.getInPutValue("Enter size array: ")];
+        int randomValue = InputUtil.getInPutValue("Enter random value: ");
+        for (int index = 0; index < randomArray.length; index++) {
+            randomArray[index] = random.nextInt(randomValue);
         }
         return randomArray;
     }

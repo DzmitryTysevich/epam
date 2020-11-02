@@ -5,29 +5,29 @@ import com.epam.task.Utils.MatrixUtil;
 
 public class Task3 {
     public static void main(String[] args) {
-        int[][] randomMatrix = MatrixUtil.buildRandomMatrix();
-        giveLineMatrix(randomMatrix, InputUtil.inPutValue("Enter k: "));
+        int[][] randomMatrix = MatrixUtil.getRandomMatrix();
+        printLineMatrix(randomMatrix, InputUtil.getInPutValue("Enter k: "));
         System.out.println();
-        giveColumnMatrix(randomMatrix, InputUtil.inPutValue("Enter p: "));
+        printColumnMatrix(randomMatrix, InputUtil.getInPutValue("Enter p: "));
     }
 
-    public static void giveLineMatrix(int[][] matrix, int k) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (i == k) {
-                    System.out.print(" " + matrix[i][j] + " ");
+    public static void printLineMatrix(int[][] matrix, int lineK) {
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix[line].length; column++) {
+                if (line == lineK) {
+                    System.out.print("\t" + matrix[line][column] + " ");
                 }
             }
         }
         System.out.println();
     }
 
-    public static void giveColumnMatrix(int[][] matrix, int p) {
+    public static void printColumnMatrix(int[][] matrix, int columnP) {
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (j == p) {
-                    System.out.println(" " + matrix[i][j] + " ");
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix[line].length; column++) {
+                if (column == columnP) {
+                    System.out.println("\t" + matrix[line][column] + " ");
                 }
             }
         }

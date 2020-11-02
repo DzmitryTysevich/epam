@@ -4,7 +4,7 @@ import static com.epam.task.Utils.InputUtil.*;
 
 public class Task11 {
     public static void main(String[] args) {
-        equalValues(inPutValue("Enter number 1: "), inPutValue("Enter number 2: "));
+        equalValues(getInPutValue("Enter number 1: "), getInPutValue("Enter number 2: "));
     }
 
     public static void equalValues(int number1, int number2) {

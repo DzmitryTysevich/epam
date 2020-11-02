@@ -4,34 +4,34 @@ import com.epam.task.Utils.MatrixUtil;
 
 public class Task15 {
     public static void main(String[] args) {
-        int[][] matrix = MatrixUtil.buildRandomMatrix();
-        swapOddElementMatrix(matrix);
+        int[][] matrix = MatrixUtil.getRandomMatrix();
+        printSwapOddElementMatrix(matrix);
     }
 
-    private static int findMaxElementMatrix(int[][] matrix) {
+    private static int getMaxElementMatrix(int[][] matrix) {
         int maxElement = matrix[0][0];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j] > maxElement) {
-                    maxElement = matrix[i][j];
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix[line].length; column++) {
+                if (matrix[line][column] > maxElement) {
+                    maxElement = matrix[line][column];
                 }
             }
         }
         return maxElement;
     }
 
-    public static void swapOddElementMatrix(int[][] matrix) {
-        int maxElement = findMaxElementMatrix(matrix);
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 1; j < matrix[i].length; j++) {
-                if (j % 2 == 0) {
-                    matrix[i][j] = maxElement;
+    public static void printSwapOddElementMatrix(int[][] matrix) {
+        int maxElement = getMaxElementMatrix(matrix);
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix[line].length; column++) {
+                if (column % 2 == 0 && line % 2 == 0) {
+                    matrix[line][column] = maxElement;
                 }
             }
         }
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.printf("\t%d", matrix[i][j]);
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix[line].length; column++) {
+                System.out.printf("\t%d", matrix[line][column]);
             }
             System.out.println();
         }

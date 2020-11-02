@@ -1,33 +1,33 @@
 package com.epam.task.module2.arraysOfArrays;
 
-import com.epam.task.Utils.MatrixUtil;
-
 import java.util.Arrays;
+
+import static com.epam.task.Utils.MatrixUtil.*;
 
 public class Task9 {
     public static void main(String[] args) {
-        int[][] randomMatrix = MatrixUtil.buildRandomMatrix();
-        System.out.println(Arrays.toString(calculateSumValue(randomMatrix)));
-        System.out.printf("Column with max sum: %d", findColumnWithMaxSum(calculateSumValue(randomMatrix)));
+        int[][] randomMatrix = getRandomMatrix();
+        System.out.println(Arrays.toString(getSumForColumns(randomMatrix)));
+        System.out.printf("Column with max sum: %d", getColumnWithMaxSum(getSumForColumns(randomMatrix)));
     }
 
-    public static int[] calculateSumValue(int[][] matrix) {
-        int[] sum = new int[matrix[0].length];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                sum[j] += matrix[i][j];
+    public static int[] getSumForColumns(int[][] matrix) {
+        int[] summa = new int[matrix[0].length];
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix[line].length; column++) {
+                summa[column] += matrix[line][column];
             }
         }
-        return sum;
+        return summa;
     }
 
-    public static int findColumnWithMaxSum(int[] sum) {
-        int max = sum[0];
+    public static int getColumnWithMaxSum(int[] summa) {
+        int max = summa[0];
         int result = 0;
-        for (int i = 0; i < sum.length; i++) {
-            if (sum[i] > max) {
-                max = sum[i];
-                result = i;
+        for (int index = 0; index < summa.length; index++) {
+            if (summa[index] > max) {
+                max = summa[index];
+                result = index;
             }
         }
         return result;

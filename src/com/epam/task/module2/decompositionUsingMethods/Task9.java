@@ -5,10 +5,10 @@ import static java.lang.Math.*;
 
 public class Task9 {
     public static void main(String[] args) {
-        int x = inPutValue("Enter x: ");
-        int y = inPutValue("Enter y: ");
-        int z = inPutValue("Enter z: ");
-        int t = inPutValue("Enter t: ");
+        int x = getInPutValue("Enter x: ");
+        int y = getInPutValue("Enter y: ");
+        int z = getInPutValue("Enter z: ");
+        int t = getInPutValue("Enter t: ");
         calculateSquareRectangle(x, y, z, t);
     }
 

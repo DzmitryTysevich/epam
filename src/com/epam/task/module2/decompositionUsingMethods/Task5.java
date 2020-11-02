@@ -6,7 +6,7 @@ import static com.epam.task.Utils.ArrayUtil.*;
 
 public class Task5 {
     public static void main(String[] args) {
-        int[] array = randomArray();
+        int[] array = getRandomArray();
         System.out.println(Arrays.toString(array));
         System.out.println(findPreMaxValue(array, findMaxValue(array)));
     }

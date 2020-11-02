@@ -5,9 +5,9 @@ import static com.epam.task.Utils.NumberOperation.*;
 
 public class Task6 {
     public static void main(String[] args) {
-        int number1 = inPutValue("Enter number 1: ");
-        int number2 = inPutValue("Enter number 2: ");
-        int number3 = inPutValue("Enter number 3: ");
+        int number1 = getInPutValue("Enter number 1: ");
+        int number2 = getInPutValue("Enter number 2: ");
+        int number3 = getInPutValue("Enter number 3: ");
         isSimpleNumbers(number1, number2, number3);
     }
 

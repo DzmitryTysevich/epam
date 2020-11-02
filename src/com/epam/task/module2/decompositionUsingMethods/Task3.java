@@ -4,7 +4,7 @@ import static com.epam.task.Utils.InputUtil.*;
 
 public class Task3 {
     public static void main(String[] args) {
-        System.out.printf("Square: %.10f", calculateSquareHexagon(inPutValue("Enter size side: ")));
+        System.out.printf("Square: %.10f", calculateSquareHexagon(getInPutValue("Enter size side: ")));
 
     }
 

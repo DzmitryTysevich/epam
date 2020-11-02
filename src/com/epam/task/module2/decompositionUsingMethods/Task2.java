@@ -5,18 +5,18 @@ import static com.epam.task.Utils.NumberOperation.*;
 
 public class Task2 {
     public static void main(String[] args) {
-        int numberA = inPutValue("Enter A: ");
-        int numberB = inPutValue("Enter B: ");
-        int numberC = inPutValue("Enter C: ");
-        int numberD = inPutValue("Enter D: ");
+        int numberA = getInPutValue("Enter A: ");
+        int numberB = getInPutValue("Enter B: ");
+        int numberC = getInPutValue("Enter C: ");
+        int numberD = getInPutValue("Enter D: ");
         System.out.printf("Max common divider: %d", findMaxCommonDividerValue(numberA, numberB, numberC, numberD));
     }
 
     public static int findMaxCommonDividerValue(int numberA, int numberB, int numberC, int numberD) {
-        int[] arrayA = searchSimpleNumbers(numberA);
-        int[] arrayB = searchSimpleNumbers(numberB);
-        int[] arrayC = searchSimpleNumbers(numberC);
-        int[] arrayD = searchSimpleNumbers(numberD);
+        int[] arrayA = getSimpleNumbers(numberA);
+        int[] arrayB = getSimpleNumbers(numberB);
+        int[] arrayC = getSimpleNumbers(numberC);
+        int[] arrayD = getSimpleNumbers(numberD);
         int minSize = Math.min(Math.min(numberA, numberB), Math.min(numberC, numberD));
         int[] doubleArray = findEqualValue(minSize, arrayA, arrayB, arrayC, arrayD);
         return findMaxCommonDividerValue(doubleArray);

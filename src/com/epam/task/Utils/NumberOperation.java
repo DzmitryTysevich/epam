@@ -1,27 +1,27 @@
 package com.epam.task.Utils;
 
 public class NumberOperation {
-    public static int[] searchSimpleNumbers(int number) {
+    public static int[] getSimpleNumbers(int number) {
         int[] array = new int[number];
-        for (int i = 1; i < number; i++) {
-            if (number % i == 0)
-                array[i] = i;
+        for (int index = 1; index < number; index++) {
+            if (number % index == 0)
+                array[index] = index;
         }
         return array;
     }
 
-    public static int[] searchSimpleNumbersOnTheSegment(int startNumber, int endNumber) {
+    public static int[] getSimpleNumbersOnTheSegment(int startNumber, int endNumber) {
         int[] array = new int[endNumber];
-        for (int i = startNumber; i <= endNumber; i++) {
-            if (endNumber % i == 0)
-                array[i] = i;
+        for (int index = startNumber; index <= endNumber; index++) {
+            if (endNumber % index == 0)
+                array[index] = index;
         }
         return array;
     }
 
     public static boolean isMaxOneDivider(int number) {
-        for (int i = 2; i < number; i++) {
-            if (number % i == 0) {
+        for (int index = 2; index < number; index++) {
+            if (number % index == 0) {
                 return false;
             }
         }

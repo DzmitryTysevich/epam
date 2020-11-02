@@ -7,12 +7,12 @@ import java.util.Arrays;
 
 public class Task1 {
     public static void main(String[] args) {
-        int[] array1 = ArrayUtil.randomArray();
-        int[] array2 = ArrayUtil.randomArray();
+        int[] array1 = ArrayUtil.getRandomArray();
+        int[] array2 = ArrayUtil.getRandomArray();
         System.out.println(Arrays.toString(array1));
         System.out.println(Arrays.toString(array2));
         array1 = Arrays.copyOf(array1, array1.length + array2.length);
-        swatArray(InputUtil.inPutValue("Enter K: "), array1, array2);
+        swatArray(InputUtil.getInPutValue("Enter K: "), array1, array2);
     }
 
     public static void swatArray(int k, int[] array1, int[] array2) {

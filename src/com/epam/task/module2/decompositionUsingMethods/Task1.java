@@ -5,16 +5,16 @@ import static com.epam.task.Utils.NumberOperation.*;
 
 public class Task1 {
     public static void main(String[] args) {
-        int numberA = inPutValue("Enter A: ");
-        int numberB = inPutValue("Enter B: ");
+        int numberA = getInPutValue("Enter A: ");
+        int numberB = getInPutValue("Enter B: ");
         System.out.printf("Min common multiple: %d", findMinCommonMultipleValue(numberA, numberB));
         System.out.println();
         System.out.printf("Max common divider: %d", findMaxCommonDividerValue(numberA, numberB));
     }
 
     public static int findMaxCommonDividerValue(int numberA, int numberB) {
-        int[] arrayA = searchSimpleNumbers(numberA);
-        int[] arrayB = searchSimpleNumbers(numberB);
+        int[] arrayA = getSimpleNumbers(numberA);
+        int[] arrayB = getSimpleNumbers(numberB);
         int[] doubleArray = findEqualValue(Math.min(numberA, numberB), arrayA, arrayB);
         return findMaxCommonDividerValue(doubleArray);
     }

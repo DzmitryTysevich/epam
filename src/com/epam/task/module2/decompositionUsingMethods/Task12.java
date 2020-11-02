@@ -6,7 +6,7 @@ import static com.epam.task.Utils.InputUtil.*;
 
 public class Task12 {
     public static void main(String[] args) {
-        int[] array = createArray(inPutValue("Enter K: "), inPutValue("Enter N: "));
+        int[] array = createArray(getInPutValue("Enter K: "), getInPutValue("Enter N: "));
         System.out.println(Arrays.toString(array));
     }
 

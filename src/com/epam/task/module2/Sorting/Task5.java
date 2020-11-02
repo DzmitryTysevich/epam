@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public class Task5 {
     public static void main(String[] args) {
-        int[] unsortedArray = ArrayUtil.randomArray();
+        int[] unsortedArray = ArrayUtil.getRandomArray();
         System.out.println(Arrays.toString(unsortedArray));
         System.out.println(Arrays.toString(sortToShellArray(unsortedArray)));
     }

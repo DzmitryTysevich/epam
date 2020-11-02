@@ -4,39 +4,39 @@ import com.epam.task.Utils.MatrixUtil;
 
 public class Task12 {
     public static void main(String[] args) {
-        int[][] matrix = MatrixUtil.buildRandomMatrix();
-        sortMatrixByLineMax(matrix);
+        int[][] matrix = MatrixUtil.getRandomMatrix();
+        printSortedMatrixByLineMax(matrix);
         System.out.println();
-        sortMatrixByLineMin(matrix);
+        printSortedMatrixByLineMin(matrix);
     }
 
-    public static void sortMatrixByLineMax(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = matrix[i].length - 1; j >= 0; j--) {
-                for (int k = 0; k < j; k++) {
-                    if (matrix[i][k] > matrix[i][k + 1]) {
-                        int temp = matrix[i][k];
-                        matrix[i][k] = matrix[i][k + 1];
-                        matrix[i][k + 1] = temp;
+    public static void printSortedMatrixByLineMax(int[][] matrix) {
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = matrix[line].length - 1; column >= 0; column--) {
+                for (int lineReader = 0; lineReader < column; lineReader++) {
+                    if (matrix[line][lineReader] > matrix[line][lineReader + 1]) {
+                        int tempValue = matrix[line][lineReader];
+                        matrix[line][lineReader] = matrix[line][lineReader + 1];
+                        matrix[line][lineReader + 1] = tempValue;
                     }
                 }
-                System.out.printf("\t%d", matrix[i][j]);
+                System.out.printf("\t%d", matrix[line][column]);
             }
             System.out.println();
         }
     }
 
-    public static void sortMatrixByLineMin(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = matrix[i].length - 1; j >= 0; j--) {
-                for (int k = 0; k < j; k++) {
-                    if (matrix[i][k] < matrix[i][k + 1]) {
-                        int temp = matrix[i][k];
-                        matrix[i][k] = matrix[i][k + 1];
-                        matrix[i][k + 1] = temp;
+    public static void printSortedMatrixByLineMin(int[][] matrix) {
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = matrix[line].length - 1; column >= 0; column--) {
+                for (int lineReader = 0; lineReader < column; lineReader++) {
+                    if (matrix[line][lineReader] < matrix[line][lineReader + 1]) {
+                        int tempValue = matrix[line][lineReader];
+                        matrix[line][lineReader] = matrix[line][lineReader + 1];
+                        matrix[line][lineReader + 1] = tempValue;
                     }
                 }
-                System.out.printf("\t%d", matrix[i][j]);
+                System.out.printf("\t%d", matrix[line][column]);
             }
             System.out.println();
         }
