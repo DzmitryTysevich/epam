@@ -6,11 +6,11 @@ import static com.epam.task.Utils.InputUtil.*;
 
 public class Task12 {
     public static void main(String[] args) {
-        int[] array = createArray(getInPutValue("Enter K: "), getInPutValue("Enter N: "));
+        int[] array = getArrayWithNumbers(getInPutValue("Enter K: "), getInPutValue("Enter N: "));
         System.out.println(Arrays.toString(array));
     }
 
-    public static int[] createArray(int sumNumberK, int numberN) {
+    public static int[] getArrayWithNumbers(int sumNumberK, int numberN) {
         int[] arrayNumbers = new int[sumNumberK];
         int selectionUnknownNumber = 0;
         int newLengthArray = 0;
@@ -18,7 +18,7 @@ public class Task12 {
             do {
                 selectionUnknownNumber++;
             }
-            while (findSummaDigitsOfNumber(selectionUnknownNumber) != sumNumberK);
+            while (getSummaDigitsOfNumber(selectionUnknownNumber) != sumNumberK);
             if (selectionUnknownNumber < numberN)
                 arrayNumbers[numberReader] = selectionUnknownNumber;
             if (arrayNumbers[numberReader] != 0)
@@ -27,7 +27,7 @@ public class Task12 {
         return Arrays.copyOf(arrayNumbers, newLengthArray);
     }
 
-    private static int findSummaDigitsOfNumber(int unknownNumber) {
+    private static int getSummaDigitsOfNumber(int unknownNumber) {
         int summaDigits = 0;
         int numberLength = getLengthArray(unknownNumber);
         int[] arrayOfDigits = getDigitsNumber(unknownNumber);
