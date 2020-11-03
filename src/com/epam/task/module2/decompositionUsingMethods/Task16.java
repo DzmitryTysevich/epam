@@ -23,7 +23,7 @@ public class Task16 {
     private static int getSummaNumbersWithoutEvenDigits(int endGap) {
         int finderNumber;
         int summaNumberWithoutEvenDigits = 0;
-        for (int indexNumber = 11; indexNumber <= endGap; indexNumber++) {
+        for (int indexNumber = 1; indexNumber <= endGap; indexNumber++) {
             finderNumber = indexNumber;
             if (isNumberWithOutEvenDigits(indexNumber)) {
                 summaNumberWithoutEvenDigits += finderNumber;
@@ -36,6 +36,11 @@ public class Task16 {
 
     private static boolean isNumberWithOutEvenDigits(int endGap) {
         int[] arrayDigitsNumber = getArrayDigitsNumber(endGap);
+        if (arrayDigitsNumber.length == 1) {
+            if (arrayDigitsNumber[0] % 2 == 0) {
+                return false;
+            }
+        }
         for (int indexDigit = 0; indexDigit < arrayDigitsNumber.length - 1; indexDigit++) {
             if (arrayDigitsNumber[indexDigit] % 2 == 0 || arrayDigitsNumber[indexDigit + 1] % 2 == 0) {
                 return false;
