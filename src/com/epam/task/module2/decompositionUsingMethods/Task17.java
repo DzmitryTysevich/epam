@@ -5,6 +5,10 @@ import static com.epam.task.Utils.NumberOperation.*;
 
 public class Task17 {
     public static void main(String[] args) {
+        run();
+    }
+
+    public static void run() {
         int summaOperations = getSummaOperationsWithNumber(getInPutValue("Enter number: "));
         System.out.printf("Result: %d", summaOperations);
     }

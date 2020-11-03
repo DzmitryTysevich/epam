@@ -5,6 +5,10 @@ import static com.epam.task.Utils.NumberOperation.getAmountDigitsFromNumber;
 
 public class Task16 {
     public static void main(String[] args) {
+        run();
+    }
+
+    public static void run() {
         getAmountEvenNumbersInSummaNumbersWithoutEvenDigits(getInPutValue("Enter n-number: "));
     }
 

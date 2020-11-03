@@ -6,6 +6,10 @@ import static com.epam.task.Utils.NumberOperation.getAmountDigitsFromNumber;
 
 public class Task15 {
     public static void main(String[] args) {
+        run();
+    }
+
+    public static void run() {
         printNNumber(InputUtil.getInPutValue("Enter n-number: "));
     }
 

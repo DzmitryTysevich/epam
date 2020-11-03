@@ -7,6 +7,10 @@ import static com.epam.task.Utils.NumberOperation.*;
 
 public class Task12 {
     public static void main(String[] args) {
+        run();
+    }
+
+    public static void run() {
         int[] array = getArrayWithNumbers(getInPutValue("Enter K: "), getInPutValue("Enter N: "));
         System.out.println(Arrays.toString(array));
     }

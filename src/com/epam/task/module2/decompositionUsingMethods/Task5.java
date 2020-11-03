@@ -6,28 +6,32 @@ import static com.epam.task.Utils.ArrayUtil.*;
 
 public class Task5 {
     public static void main(String[] args) {
+        run();
+    }
+
+    public static void run() {
         int[] array = getRandomArray();
         System.out.println(Arrays.toString(array));
-        System.out.println(findPreMaxValue(array, findMaxValue(array)));
+        System.out.println(getPreMaxValue(array, getMaxValue(array)));
     }
 
-    public static int findMaxValue(int[] array) {
-        int maxValue = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > maxValue) {
-                maxValue = array[i];
-            }
-        }
-        return maxValue;
-    }
-
-    public static int findPreMaxValue(int[] array, int maxValue) {
+    public static int getPreMaxValue(int[] array, int maxValue) {
         int preMaxValue = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > preMaxValue && array[i] != maxValue) {
-                preMaxValue = array[i];
+        for (int indexNumber = 0; indexNumber < array.length; indexNumber++) {
+            if (array[indexNumber] > preMaxValue && array[indexNumber] != maxValue) {
+                preMaxValue = array[indexNumber];
             }
         }
         return preMaxValue;
+    }
+
+    public static int getMaxValue(int[] array) {
+        int maxValue = 0;
+        for (int indexNumber = 0; indexNumber < array.length; indexNumber++) {
+            if (array[indexNumber] > maxValue) {
+                maxValue = array[indexNumber];
+            }
+        }
+        return maxValue;
     }
 }

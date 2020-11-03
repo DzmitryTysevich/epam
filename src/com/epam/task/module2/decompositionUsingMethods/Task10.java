@@ -6,24 +6,27 @@ import java.util.Arrays;
 
 public class Task10 {
     public static void main(String[] args) {
-        createArrayNumbers(InputUtil.getInPutValue("Enter number: "));
-
+        run();
     }
 
-    public static void createArrayNumbers(int n) {
-        int[] array = new int[findLength(n)];
-        for (int i = array.length - 1; i >= 0; i--) {
-            int numberToArray = n % 10;
-            n /= 10;
-            array[i] = numberToArray;
+    public static void run() {
+        createArrayNumbers(InputUtil.getInPutValue("Enter number: "));
+    }
+
+    public static void createArrayNumbers(int numberN) {
+        int[] array = new int[getLengthArray(numberN)];
+        for (int indexNumber = array.length - 1; indexNumber >= 0; indexNumber--) {
+            int numberToArray = numberN % 10;
+            numberN /= 10;
+            array[indexNumber] = numberToArray;
         }
         System.out.println(Arrays.toString(array));
     }
 
-    private static int findLength(int n) {
+    private static int getLengthArray(int numberN) {
         int arrayLength = 0;
         int tempNum = 1;
-        while (tempNum <= n) {
+        while (tempNum <= numberN) {
             tempNum *= 10;
             arrayLength++;
         }

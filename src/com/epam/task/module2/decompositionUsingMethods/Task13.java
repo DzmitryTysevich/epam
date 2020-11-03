@@ -5,6 +5,10 @@ import static com.epam.task.Utils.NumberOperation.*;
 
 public class Task13 {
     public static void main(String[] args) {
+        run();
+    }
+
+    public static void run() {
         getSimpleNumbers(getInPutValue("Enter N: "));
     }
 

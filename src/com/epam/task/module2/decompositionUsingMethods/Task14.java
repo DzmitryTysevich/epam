@@ -7,6 +7,10 @@ import static java.lang.Math.*;
 
 public class Task14 {
     public static void main(String[] args) {
+        run();
+    }
+
+    public static void run() {
         printArmstrongNUmber(InputUtil.getInPutValue("Enter endGap: "));
     }
 

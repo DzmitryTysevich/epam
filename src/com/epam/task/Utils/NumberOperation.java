@@ -10,15 +10,6 @@ public class NumberOperation {
         return array;
     }
 
-    public static int[] getSimpleNumbersOnTheSegment(int startNumber, int endNumber) {
-        int[] array = new int[endNumber];
-        for (int index = startNumber; index <= endNumber; index++) {
-            if (endNumber % index == 0)
-                array[index] = index;
-        }
-        return array;
-    }
-
     public static boolean isMaxOneDivider(int number) {
         for (int index = 2; index < number; index++) {
             if (number % index == 0) {

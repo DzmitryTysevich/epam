@@ -6,22 +6,27 @@ import static java.lang.StrictMath.sqrt;
 
 public class Task4 {
     public static void main(String[] args) {
+        run();
+    }
+
+    public static void run() {
         double[][] matrix = getRandomPointsMatrix();
-        findDistanceBetweenPoints(matrix);
+        getMaxDistanceBetweenPoints(matrix);
         System.out.println();
     }
 
-    public static void findDistanceBetweenPoints(double[][] array) {
+    public static void getMaxDistanceBetweenPoints(double[][] array) {
         double maxDistance = 0;
         String firstPoint = null;
         String secondPoint = null;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i; j < array.length - 1; j++) {
-                double distance = calculateDistance(array[i][0], array[j + 1][0], array[i][1], array[j + 1][1]);
-                if (distance > maxDistance) {
-                    maxDistance = distance;
-                    firstPoint = "First point  - {" + array[i][0] + " : " + array[i][1] + "}";
-                    secondPoint = "Second point - {" + array[j + 1][0] + " : " + array[j + 1][1] + "}";
+        for (int linePoints = 0; linePoints < array.length; linePoints++) {
+            for (int columnPoints = linePoints; columnPoints < array.length - 1; columnPoints++) {
+                double distanceBetweenPoints = getFormulaDistanceBetweenPoints(array[linePoints][0],
+                        array[columnPoints + 1][0], array[linePoints][1], array[columnPoints + 1][1]);
+                if (distanceBetweenPoints > maxDistance) {
+                    maxDistance = distanceBetweenPoints;
+                    firstPoint = "First point  - {" + array[linePoints][0] + " : " + array[linePoints][1] + "}";
+                    secondPoint = "Second point - {" + array[columnPoints + 1][0] + " : " + array[columnPoints + 1][1] + "}";
                 }
             }
         }
@@ -30,7 +35,7 @@ public class Task4 {
         System.out.print(secondPoint);
     }
 
-    private static double calculateDistance(double x, double x1, double y, double y1) {
+    private static double getFormulaDistanceBetweenPoints(double x, double x1, double y, double y1) {
         return sqrt(pow(x - x1, 2) + pow(y - y1, 2));
     }
 }
