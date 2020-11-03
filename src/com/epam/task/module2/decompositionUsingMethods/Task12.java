@@ -3,6 +3,7 @@ package com.epam.task.module2.decompositionUsingMethods;
 import java.util.Arrays;
 
 import static com.epam.task.Utils.InputUtil.*;
+import static com.epam.task.Utils.NumberOperation.*;
 
 public class Task12 {
     public static void main(String[] args) {
@@ -29,7 +30,7 @@ public class Task12 {
 
     private static int getSummaDigitsOfNumber(int unknownNumber) {
         int summaDigits = 0;
-        int numberLength = getLengthArray(unknownNumber);
+        int numberLength = getAmountDigitsFromNumber(unknownNumber);
         int[] arrayOfDigits = getDigitsNumber(unknownNumber);
         for (int index = 0; index < numberLength; index++) {
             summaDigits += arrayOfDigits[index];
@@ -38,23 +39,12 @@ public class Task12 {
     }
 
     private static int[] getDigitsNumber(int unknownNumber) {
-        int[] array = new int[getLengthArray(unknownNumber)];
+        int[] array = new int[getAmountDigitsFromNumber(unknownNumber)];
         for (int index = array.length - 1; index >= 0; index--) {
             int numberToArray = unknownNumber % 10;
             unknownNumber /= 10;
             array[index] = numberToArray;
-
         }
         return array;
-    }
-
-    private static int getLengthArray(int unknownNumber) {
-        int numberLength = 0;
-        int tempNum = 1;
-        while (tempNum <= unknownNumber) {
-            tempNum *= 10;
-            numberLength++;
-        }
-        return numberLength;
     }
 }

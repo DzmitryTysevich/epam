@@ -1,6 +1,7 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
 import static com.epam.task.Utils.InputUtil.*;
+import static com.epam.task.Utils.NumberOperation.*;
 
 public class Task17 {
     public static void main(String[] args) {
@@ -19,23 +20,14 @@ public class Task17 {
     }
 
     public static int getSummaDigitsFromNumber(int number) {
+        int amountDigitsFromNumber = getAmountDigitsFromNumber(number);
         int summaDigits = 0;
         int digitFromNumber = 0;
-        for (int index = getAmountDigitsFromNumber(number) - 1; index >= 0; index--) {
+        for (int index = amountDigitsFromNumber - 1; index >= 0; index--) {
             digitFromNumber = number % 10;
             number /= 10;
             summaDigits += digitFromNumber;
         }
         return summaDigits;
-    }
-
-    public static int getAmountDigitsFromNumber(int number) {
-        int tempNumber = 1;
-        int amountDigits = 0;
-        while (tempNumber < number) {
-            tempNumber *= 10;
-            amountDigits++;
-        }
-        return amountDigits;
     }
 }

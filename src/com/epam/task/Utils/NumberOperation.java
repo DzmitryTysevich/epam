@@ -27,4 +27,14 @@ public class NumberOperation {
         }
         return true;
     }
+
+    public static int getAmountDigitsFromNumber(int number) {
+        int tempNumber = 1;
+        int amountDigits = 0;
+        while (tempNumber < number) {
+            tempNumber *= 10;
+            amountDigits++;
+        }
+        return amountDigits;
+    }
 }
