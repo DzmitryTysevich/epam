@@ -19,7 +19,8 @@ public class Task1 {
     public static int getMaxCommonDividerValue(int numberA, int numberB) {
         int[] arrayA = getSimpleNumbers(numberA);
         int[] arrayB = getSimpleNumbers(numberB);
-        int[] doubleArray = getEqualValue(Math.min(numberA, numberB), arrayA, arrayB);
+        int sizeDoubleArray = Math.min(numberA, numberB);
+        int[] doubleArray = getEqualArray(sizeDoubleArray, arrayA, arrayB);
         return getMaxCommonDividerValue(doubleArray);
     }
 
@@ -27,9 +28,9 @@ public class Task1 {
         return numberA * numberB / getMaxCommonDividerValue(numberA, numberB);
     }
 
-    private static int[] getEqualValue(int size, int[] arrayA, int[] arrayB) {
-        int[] equalValueArray = new int[size];
-        for (int index = 0; index < size; index++) {
+    private static int[] getEqualArray(int sizeDoubleArray, int[] arrayA, int[] arrayB) {
+        int[] equalValueArray = new int[sizeDoubleArray];
+        for (int index = 0; index < sizeDoubleArray; index++) {
             if (arrayA[index] == arrayB[index] && arrayA[index] != 0) {
                 equalValueArray[index] = arrayA[index];
             }
