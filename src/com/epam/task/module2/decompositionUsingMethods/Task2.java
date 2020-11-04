@@ -27,8 +27,8 @@ public class Task2 {
     }
 
     private static int[] getEqualValue(int size, int[] arrayA, int[] arrayB, int[] arrayC, int[] arrayD) {
-        int[] equalValueArray = new int[size];
-        for (int index = 0; index < size; index++) {
+        int[] equalValueArray = new int[size + 1];
+        for (int index = 0; index <= size; index++) {
             if (arrayA[index] == arrayB[index] && arrayC[index] == arrayD[index] && arrayA[index] == arrayD[index] &&
                     arrayA[index] != 0 && arrayC[index] != 0) {
                 equalValueArray[index] = arrayA[index];
