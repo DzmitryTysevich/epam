@@ -1,7 +1,5 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
-import java.util.Arrays;
-
 import static com.epam.task.Utils.InputUtil.*;
 import static com.epam.task.Utils.NumberOperation.*;
 
