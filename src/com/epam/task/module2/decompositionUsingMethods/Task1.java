@@ -21,8 +21,6 @@ public class Task1 {
     public static int getMaxCommonDividerValue(int numberA, int numberB) {
         int[] arrayA = getSimpleNumbers(numberA);
         int[] arrayB = getSimpleNumbers(numberB);
-        System.out.println(Arrays.toString(arrayA));
-        System.out.println(Arrays.toString(arrayB));
         int sizeDoubleArray = Math.min(numberA, numberB);
         int[] doubleArray = getEqualArray(sizeDoubleArray, arrayA, arrayB);
         return getMaxCommonDividerValue(doubleArray);
