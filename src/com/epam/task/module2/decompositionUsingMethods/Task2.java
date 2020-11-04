@@ -21,14 +21,14 @@ public class Task2 {
         int[] arrayB = getSimpleNumbers(numberB);
         int[] arrayC = getSimpleNumbers(numberC);
         int[] arrayD = getSimpleNumbers(numberD);
-        int minSize = Math.min(Math.min(numberA, numberB), Math.min(numberC, numberD));
-        int[] doubleArray = getEqualValue(minSize, arrayA, arrayB, arrayC, arrayD);
+        int[] doubleArray = getEqualValue(arrayA, arrayB, arrayC, arrayD);
         return getMaxCommonDividerValue(doubleArray);
     }
 
-    private static int[] getEqualValue(int size, int[] arrayA, int[] arrayB, int[] arrayC, int[] arrayD) {
-        int[] equalValueArray = new int[size + 1];
-        for (int index = 0; index <= size; index++) {
+    private static int[] getEqualValue(int[] arrayA, int[] arrayB, int[] arrayC, int[] arrayD) {
+        int minSize = Math.min(Math.min(arrayA.length, arrayB.length), Math.min(arrayC.length, arrayD.length));
+        int[] equalValueArray = new int[minSize];
+        for (int index = 0; index < minSize; index++) {
             if (arrayA[index] == arrayB[index] && arrayC[index] == arrayD[index] && arrayA[index] == arrayD[index] &&
                     arrayA[index] != 0 && arrayC[index] != 0) {
                 equalValueArray[index] = arrayA[index];

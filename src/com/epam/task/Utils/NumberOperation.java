@@ -2,10 +2,10 @@ package com.epam.task.Utils;
 
 public class NumberOperation {
     public static int[] getSimpleNumbers(int number) {
-        int[] array = new int[number + 1];
-        for (int index = 1; index <= number; index++) {
-            if (number % index == 0)
-                array[index] = index;
+        int[] array = new int[number];
+        for (int index = 0, divider = 1; index < number; index++, divider++) {
+            if (number % divider == 0)
+                array[index] = divider;
         }
         return array;
     }
