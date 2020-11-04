@@ -2,8 +2,8 @@ package com.epam.task.module2.decompositionUsingMethods;
 
 import java.util.Arrays;
 
-import static com.epam.task.Utils.InputUtil.*;
-import static com.epam.task.Utils.NumberOperation.*;
+import static com.epam.task.Utils.InputUtil.getInPutValue;
+import static com.epam.task.Utils.NumberOperation.getAmountDigitsFromNumber;
 
 public class Task12 {
     public static void main(String[] args) {

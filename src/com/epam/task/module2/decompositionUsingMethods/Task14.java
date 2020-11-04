@@ -2,7 +2,7 @@ package com.epam.task.module2.decompositionUsingMethods;
 
 import com.epam.task.Utils.InputUtil;
 
-import static com.epam.task.Utils.NumberOperation.*;
+import static com.epam.task.Utils.NumberOperation.getAmountDigitsFromNumber;
 import static java.lang.Math.*;
 
 public class Task14 {

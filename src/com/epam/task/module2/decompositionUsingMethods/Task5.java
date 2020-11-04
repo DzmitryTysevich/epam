@@ -2,7 +2,7 @@ package com.epam.task.module2.decompositionUsingMethods;
 
 import java.util.Arrays;
 
-import static com.epam.task.Utils.ArrayUtil.*;
+import static com.epam.task.Utils.ArrayUtil.getRandomArray;
 
 public class Task5 {
     public static void main(String[] args) {

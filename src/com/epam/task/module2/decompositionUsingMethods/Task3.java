@@ -1,6 +1,6 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
-import static com.epam.task.Utils.InputUtil.*;
+import static com.epam.task.Utils.InputUtil.getInPutValue;
 
 public class Task3 {
     public static void main(String[] args) {
