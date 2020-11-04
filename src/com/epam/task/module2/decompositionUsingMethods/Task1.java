@@ -1,5 +1,7 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
+import java.util.Arrays;
+
 import static com.epam.task.Utils.InputUtil.*;
 import static com.epam.task.Utils.NumberOperation.*;
 
@@ -19,6 +21,8 @@ public class Task1 {
     public static int getMaxCommonDividerValue(int numberA, int numberB) {
         int[] arrayA = getSimpleNumbers(numberA);
         int[] arrayB = getSimpleNumbers(numberB);
+        System.out.println(Arrays.toString(arrayA));
+        System.out.println(Arrays.toString(arrayB));
         int sizeDoubleArray = Math.min(numberA, numberB);
         int[] doubleArray = getEqualArray(sizeDoubleArray, arrayA, arrayB);
         return getMaxCommonDividerValue(doubleArray);
@@ -29,8 +33,8 @@ public class Task1 {
     }
 
     private static int[] getEqualArray(int sizeDoubleArray, int[] arrayA, int[] arrayB) {
-        int[] equalValueArray = new int[sizeDoubleArray];
-        for (int index = 0; index < sizeDoubleArray; index++) {
+        int[] equalValueArray = new int[sizeDoubleArray + 1];
+        for (int index = 0; index <= sizeDoubleArray; index++) {
             if (arrayA[index] == arrayB[index] && arrayA[index] != 0) {
                 equalValueArray[index] = arrayA[index];
             }
