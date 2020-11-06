@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class MatrixUtil {
     public static int[][] getRandomMatrix() {
-        int line = InputUtil.getInPutValue("Enter line: ");
-        int column = InputUtil.getInPutValue("Enter column: ");
-        int randomSize = InputUtil.getInPutValue("Enter random size: ");
+        int line = InputUtil.getInputValue("Enter line: ");
+        int column = InputUtil.getInputValue("Enter column: ");
+        int randomSize = InputUtil.getInputValue("Enter random size: ");
         Random random = new Random();
         int[][] matrix = new int[line][column];
         for (int lineI = 0; lineI < matrix.length; lineI++) {
@@ -21,9 +21,9 @@ public class MatrixUtil {
     }
 
     public static int[][] getRandomMatrixWithMinusValue() {
-        int line = InputUtil.getInPutValue("Enter line: ");
-        int column = InputUtil.getInPutValue("Enter column: ");
-        int randomSize = InputUtil.getInPutValue("Enter random size: ");
+        int line = InputUtil.getInputValue("Enter line: ");
+        int column = InputUtil.getInputValue("Enter column: ");
+        int randomSize = InputUtil.getInputValue("Enter random size: ");
         Random random = new Random();
         int[][] matrix = new int[line][column];
         for (int lineI = 0; lineI < matrix.length; lineI++) {
@@ -38,8 +38,8 @@ public class MatrixUtil {
     }
 
     public static int[][] getFillMatrix() {
-        int line = InputUtil.getInPutValue("Enter line: ");
-        int column = InputUtil.getInPutValue("Enter column: ");
+        int line = InputUtil.getInputValue("Enter line: ");
+        int column = InputUtil.getInputValue("Enter column: ");
         int[][] matrix = new int[line][column];
         for (int lineI = 0; lineI < matrix.length; lineI++) {
             for (int columnJ = 0; columnJ < matrix[lineI].length; columnJ++) {
@@ -53,8 +53,8 @@ public class MatrixUtil {
 
     public static double[][] getRandomPointsMatrix() {
         Random random = new Random();
-        double[][] matrix = new double[InputUtil.getInPutValue("Enter amount points: ")][2];
-        int randomSize = InputUtil.getInPutValue("Enter random size: ");
+        double[][] matrix = new double[InputUtil.getInputValue("Enter amount points: ")][2];
+        int randomSize = InputUtil.getInputValue("Enter random size: ");
         for (int lineI = 0; lineI < matrix.length; lineI++) {
             for (int columnJ = 0; columnJ < matrix[lineI].length; columnJ++) {
                 matrix[lineI][columnJ] = random.nextInt(randomSize);

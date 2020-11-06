@@ -1,19 +1,35 @@
 package com.epam.task.module3.workingWithStringAsAnArrayOfCharacters;
 
-import java.util.Arrays;
+import com.epam.task.Utils.InputUtil;
 
 public class Task1 {
     public static void main(String[] args) {
-        String string = "aRrayChar";
+        run();
+    }
+
+    private static void run() {
+        String string = InputUtil.getInputString("Enter string: ");
         System.out.println(string);
         char[] charArrayFromString = string.toCharArray();
         getArrayIndexToInsert(charArrayFromString);
-        char[] change = changeWord(charArrayFromString);
-        String string2 = String.valueOf(change);
-        System.out.println(string2);
+        char[] stringChange = getStringChange(charArrayFromString);
+        String stringNew = String.valueOf(stringChange);
+        System.out.println(stringNew);
     }
 
-    public static int getUpperCharSum(char[] charArrayFromString) {
+    public static char[] getStringChange(char[] charArrayFromString) {
+        int[] arrayIndexToInsert = getArrayIndexToInsert(charArrayFromString);
+        for (int indexChars = arrayIndexToInsert.length - 1; indexChars >= 0; indexChars--) {
+            for (int indexReader = charArrayFromString.length - 1; indexReader >= 0; indexReader--) {
+                if (indexReader == arrayIndexToInsert[indexChars]) {
+                    charArrayFromString = getCharArrayInWords(charArrayFromString, indexReader);
+                }
+            }
+        }
+        return charArrayFromString;
+    }
+
+    private static int getUpperCharSum(char[] charArrayFromString) {
         int upperCharSum = 0;
         for (int charIndex = 0; charIndex < charArrayFromString.length; charIndex++) {
             if (Character.isUpperCase(charArrayFromString[charIndex])) {
@@ -23,7 +39,7 @@ public class Task1 {
         return upperCharSum;
     }
 
-    public static int[] getArrayIndexToInsert(char[] charArrayFromString) {
+    private static int[] getArrayIndexToInsert(char[] charArrayFromString) {
         int[] indexArrayToInsert = new int[getUpperCharSum(charArrayFromString)];
         int tempIndex = 0;
         for (int charIndex = 0; charIndex < charArrayFromString.length; charIndex++) {
@@ -35,31 +51,18 @@ public class Task1 {
         return indexArrayToInsert;
     }
 
-    public static char[] getCharArrayInSnakeCase(char[] charArrayFromString, int indexArrayToInsert) {
-        char[] charArrayInSnakeCase = new char[charArrayFromString.length + 1];
+    private static char[] getCharArrayInWords(char[] charArrayFromString, int indexArrayToInsert) {
+        char[] charsArrayInWords = new char[charArrayFromString.length + 1];
         int temp = 0;
         char charToInsert = '_';
-        for (int i = 0; i < charArrayInSnakeCase.length; i++) {
-            if (i == indexArrayToInsert) {
-                charArrayInSnakeCase[i] = charToInsert;
+        for (int indexChars = 0; indexChars < charsArrayInWords.length; indexChars++) {
+            if (indexChars == indexArrayToInsert) {
+                charsArrayInWords[indexChars] = charToInsert;
             } else {
-                charArrayInSnakeCase[i] = charArrayFromString[temp];
+                charsArrayInWords[indexChars] = charArrayFromString[temp];
                 temp++;
             }
         }
-        System.out.println("InSnake" + Arrays.toString(charArrayInSnakeCase));
-        return charArrayInSnakeCase;
-    }
-
-    public static char[] changeWord(char[] charArrayFromString) {
-        int[] indexArray = getArrayIndexToInsert(charArrayFromString);
-        for (int i = indexArray.length - 1; i >= 0; i--) {
-            for (int j = charArrayFromString.length - 1; j >= 0; j--) {
-                if (j == indexArray[i]) {
-                    charArrayFromString = getCharArrayInSnakeCase(charArrayFromString, j);
-                }
-            }
-        }
-        return charArrayFromString;
+        return charsArrayInWords;
     }
 }

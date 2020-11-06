@@ -6,9 +6,9 @@ import com.epam.task.Utils.MatrixUtil;
 public class Task3 {
     public static void main(String[] args) {
         int[][] randomMatrix = MatrixUtil.getRandomMatrix();
-        printLineMatrix(randomMatrix, InputUtil.getInPutValue("Enter k: "));
+        printLineMatrix(randomMatrix, InputUtil.getInputValue("Enter k: "));
         System.out.println();
-        printColumnMatrix(randomMatrix, InputUtil.getInPutValue("Enter p: "));
+        printColumnMatrix(randomMatrix, InputUtil.getInputValue("Enter p: "));
     }
 
     public static void printLineMatrix(int[][] matrix, int lineK) {

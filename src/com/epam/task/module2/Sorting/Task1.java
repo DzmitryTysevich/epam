@@ -1,23 +1,23 @@
 package com.epam.task.module2.Sorting;
 
-import com.epam.task.Utils.ArrayUtil;
-import com.epam.task.Utils.InputUtil;
-
 import java.util.Arrays;
+
+import static com.epam.task.Utils.ArrayUtil.getRandomArray;
+import static com.epam.task.Utils.InputUtil.getInputValue;
 
 public class Task1 {
     public static void main(String[] args) {
-        int[] array1 = ArrayUtil.getRandomArray();
-        int[] array2 = ArrayUtil.getRandomArray();
+        int[] array1 = getRandomArray();
+        int[] array2 = getRandomArray();
         System.out.println(Arrays.toString(array1));
         System.out.println(Arrays.toString(array2));
         array1 = Arrays.copyOf(array1, array1.length + array2.length);
-        swatArray(InputUtil.getInPutValue("Enter K: "), array1, array2);
+        swatArray(getInputValue("Enter K: "), array1, array2);
     }
 
     public static void swatArray(int valueK, int[] array1, int[] array2) {
 
-        for (int index = 0; index < array2.length; index++) {
+        for (int index = 0; index < array1.length - array2.length; index++) {
             if (index > valueK) {
                 array1[index + array2.length] = array1[index];
             }

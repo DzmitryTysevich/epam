@@ -10,7 +10,7 @@ public class Task10 {
     }
 
     public static void run() {
-        createArrayNumbers(InputUtil.getInPutValue("Enter number: "));
+        createArrayNumbers(InputUtil.getInputValue("Enter number: "));
     }
 
     public static void createArrayNumbers(int numberN) {

@@ -4,7 +4,7 @@ import com.epam.task.Utils.InputUtil;
 
 public class Task4 {
     public static void main(String[] args) {
-        printSquareMatrixTurntoReturnLine(InputUtil.getInPutValue("Enter size: "));
+        printSquareMatrixTurntoReturnLine(InputUtil.getInputValue("Enter size: "));
     }
 
     public static void printSquareMatrixTurntoReturnLine(int size) {

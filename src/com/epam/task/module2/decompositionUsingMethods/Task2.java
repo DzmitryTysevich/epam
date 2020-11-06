@@ -1,6 +1,6 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
-import static com.epam.task.Utils.InputUtil.getInPutValue;
+import static com.epam.task.Utils.InputUtil.getInputValue;
 import static com.epam.task.Utils.NumberOperation.getSimpleNumbers;
 
 public class Task2 {
@@ -9,10 +9,10 @@ public class Task2 {
     }
 
     public static void run() {
-        int numberA = getInPutValue("Enter A: ");
-        int numberB = getInPutValue("Enter B: ");
-        int numberC = getInPutValue("Enter C: ");
-        int numberD = getInPutValue("Enter D: ");
+        int numberA = getInputValue("Enter A: ");
+        int numberB = getInputValue("Enter B: ");
+        int numberC = getInputValue("Enter C: ");
+        int numberD = getInputValue("Enter D: ");
         System.out.printf("Max common divider: %d", getMaxCommonDividerValue(numberA, numberB, numberC, numberD));
     }
 

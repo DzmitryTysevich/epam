@@ -1,6 +1,6 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
-import static com.epam.task.Utils.InputUtil.getInPutValue;
+import static com.epam.task.Utils.InputUtil.getInputValue;
 import static com.epam.task.Utils.NumberOperation.getAmountDigitsFromNumber;
 
 public class Task16 {
@@ -9,7 +9,7 @@ public class Task16 {
     }
 
     public static void run() {
-        getAmountEvenNumbersInSummaNumbersWithoutEvenDigits(getInPutValue("Enter n-number: "));
+        getAmountEvenNumbersInSummaNumbersWithoutEvenDigits(getInputValue("Enter n-number: "));
     }
 
     public static int getAmountEvenNumbersInSummaNumbersWithoutEvenDigits(int endGap) {

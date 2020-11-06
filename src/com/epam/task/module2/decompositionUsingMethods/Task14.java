@@ -11,7 +11,7 @@ public class Task14 {
     }
 
     public static void run() {
-        printArmstrongNUmber(InputUtil.getInPutValue("Enter endGap: "));
+        printArmstrongNUmber(InputUtil.getInputValue("Enter endGap: "));
     }
 
     public static void printArmstrongNUmber(int endGap) {

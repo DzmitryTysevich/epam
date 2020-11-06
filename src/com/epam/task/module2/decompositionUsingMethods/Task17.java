@@ -1,6 +1,6 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
-import static com.epam.task.Utils.InputUtil.getInPutValue;
+import static com.epam.task.Utils.InputUtil.getInputValue;
 import static com.epam.task.Utils.NumberOperation.getAmountDigitsFromNumber;
 
 public class Task17 {
@@ -9,7 +9,7 @@ public class Task17 {
     }
 
     public static void run() {
-        int summaOperations = getSummaOperationsWithNumber(getInPutValue("Enter number: "));
+        int summaOperations = getSummaOperationsWithNumber(getInputValue("Enter number: "));
         System.out.printf("Result: %d", summaOperations);
     }
 

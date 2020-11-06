@@ -1,6 +1,6 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
-import static com.epam.task.Utils.InputUtil.getInPutValue;
+import static com.epam.task.Utils.InputUtil.getInputValue;
 import static java.lang.Math.*;
 
 public class Task9 {
@@ -9,10 +9,10 @@ public class Task9 {
     }
 
     public static void run() {
-        int x = getInPutValue("Enter x: ");
-        int y = getInPutValue("Enter y: ");
-        int z = getInPutValue("Enter z: ");
-        int t = getInPutValue("Enter t: ");
+        int x = getInputValue("Enter x: ");
+        int y = getInputValue("Enter y: ");
+        int z = getInputValue("Enter z: ");
+        int t = getInputValue("Enter t: ");
         getSquareRectangle(x, y, z, t);
     }
 

@@ -10,7 +10,7 @@ public class Task15 {
     }
 
     public static void run() {
-        printNNumber(InputUtil.getInPutValue("Enter n-number: "));
+        printNNumber(InputUtil.getInputValue("Enter n-number: "));
     }
 
     public static void printNNumber(int endGap) {

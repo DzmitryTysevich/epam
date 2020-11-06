@@ -1,6 +1,6 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
-import static com.epam.task.Utils.InputUtil.getInPutValue;
+import static com.epam.task.Utils.InputUtil.getInputValue;
 import static com.epam.task.Utils.NumberOperation.isMaxOneDivider;
 
 public class Task6 {
@@ -9,9 +9,9 @@ public class Task6 {
     }
 
     public static void run() {
-        int number1 = getInPutValue("Enter number 1: ");
-        int number2 = getInPutValue("Enter number 2: ");
-        int number3 = getInPutValue("Enter number 3: ");
+        int number1 = getInputValue("Enter number 1: ");
+        int number2 = getInputValue("Enter number 2: ");
+        int number3 = getInputValue("Enter number 3: ");
         printResultSimpleNumbersOrNot(number1, number2, number3);
     }
 

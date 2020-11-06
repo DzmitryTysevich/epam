@@ -1,6 +1,6 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
-import static com.epam.task.Utils.InputUtil.getInPutValue;
+import static com.epam.task.Utils.InputUtil.getInputValue;
 import static com.epam.task.Utils.NumberOperation.getAmountDigitsFromNumber;
 
 public class Task11 {
@@ -9,7 +9,7 @@ public class Task11 {
     }
 
     public static void run() {
-        printResultEqualValues(getInPutValue("Enter number 1: "), getInPutValue("Enter number 2: "));
+        printResultEqualValues(getInputValue("Enter number 1: "), getInputValue("Enter number 2: "));
     }
 
     public static void printResultEqualValues(int number1, int number2) {

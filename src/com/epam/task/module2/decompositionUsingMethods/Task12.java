@@ -2,7 +2,7 @@ package com.epam.task.module2.decompositionUsingMethods;
 
 import java.util.Arrays;
 
-import static com.epam.task.Utils.InputUtil.getInPutValue;
+import static com.epam.task.Utils.InputUtil.getInputValue;
 import static com.epam.task.Utils.NumberOperation.getAmountDigitsFromNumber;
 
 public class Task12 {
@@ -11,7 +11,7 @@ public class Task12 {
     }
 
     public static void run() {
-        int[] array = getArrayWithNumbers(getInPutValue("Enter K: "), getInPutValue("Enter N: "));
+        int[] array = getArrayWithNumbers(getInputValue("Enter K: "), getInputValue("Enter N: "));
         System.out.println(Arrays.toString(array));
     }
 

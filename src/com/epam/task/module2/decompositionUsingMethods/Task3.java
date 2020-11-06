@@ -1,6 +1,6 @@
 package com.epam.task.module2.decompositionUsingMethods;
 
-import static com.epam.task.Utils.InputUtil.getInPutValue;
+import static com.epam.task.Utils.InputUtil.getInputValue;
 
 public class Task3 {
     public static void main(String[] args) {
@@ -8,7 +8,7 @@ public class Task3 {
     }
 
     public static void run() {
-        System.out.printf("Square: %.10f", getSquareHexagon(getInPutValue("Enter size side: ")));
+        System.out.printf("Square: %.10f", getSquareHexagon(getInputValue("Enter size side: ")));
     }
 
     public static double getSquareHexagon(double sizeSide) {
