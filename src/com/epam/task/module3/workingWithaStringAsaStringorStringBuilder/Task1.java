@@ -3,13 +3,18 @@ package com.epam.task.module3.workingWithaStringAsaStringorStringBuilder;
 import java.util.Arrays;
 
 public class Task1 {
-    private static char SPACE = ' ';
+    final static char SPACE = ' ';
+    final static String STRING = "Дан текст (строка). Найдите  наибольшее    количество   подряд идущих         пробелов в   нем.";
 
     public static void main(String[] args) {
-        String string = "Дан текст (строка). Найдите  наибольшее    количество   подряд идущих         пробелов в нем.";
-        String[] strings = string.split(" ");
+        run();
+    }
+
+    public static void run() {
+
+        String[] strings = STRING.split(" ");
         System.out.println(Arrays.toString(strings));
-        getMaxSpaceInString(string);
+        getMaxSpaceInString(STRING);
     }
 
     public static void getMaxSpaceInString(String string) {
@@ -22,7 +27,8 @@ public class Task1 {
                 while (string.charAt(i) == SPACE) {
                     spaceLength++;
                     i++;
-                    maxLength = spaceLength;
+                    if (spaceLength > maxLength)
+                        maxLength = spaceLength;
                 }
             } else {
                 spaceLength = 0;
