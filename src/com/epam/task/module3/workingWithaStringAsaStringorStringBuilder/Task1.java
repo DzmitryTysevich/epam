@@ -11,7 +11,6 @@ public class Task1 {
     }
 
     public static void run() {
-
         String[] strings = STRING.split(" ");
         System.out.println(Arrays.toString(strings));
         getMaxSpaceInString(STRING);
