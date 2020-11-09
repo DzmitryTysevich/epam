@@ -13,7 +13,7 @@ public class Task9 {
         System.out.printf("Amount lower char: %d", getAmountLowerChar());
     }
 
-    private static int getAmountUpperChar() {
+    public static int getAmountUpperChar() {
         int amountUpperChar = 0;
         for (int indexChar = 0; indexChar < Task9.STRING.length(); indexChar++) {
             if (Task9.STRING.charAt(indexChar) >= 'A' && Task9.STRING.charAt(indexChar) <= 'Z') {
@@ -24,7 +24,7 @@ public class Task9 {
         return amountUpperChar;
     }
 
-    private static int getAmountLowerChar() {
+    public static int getAmountLowerChar() {
         int amountLowerChar = 0;
         for (int indexChar = 0; indexChar < Task9.STRING.length(); indexChar++) {
             if (Task9.STRING.charAt(indexChar) >= 'a' && Task9.STRING.charAt(indexChar) <= 'z') {

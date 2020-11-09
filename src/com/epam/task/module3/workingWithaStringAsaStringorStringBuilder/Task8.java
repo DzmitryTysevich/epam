@@ -15,7 +15,7 @@ public class Task8 {
         System.out.printf("Most longer word: %s", getMostLongerWord(stringBuilder));
     }
 
-    private static String getMostLongerWord(StringBuilder stringBuilder) {
+    public static String getMostLongerWord(StringBuilder stringBuilder) {
         int maxLengthWord = 0;
         int startIndexWord = 0;
         int endIndexWord = 0;
