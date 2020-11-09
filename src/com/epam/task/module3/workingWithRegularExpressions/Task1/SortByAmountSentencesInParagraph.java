@@ -1,6 +1,5 @@
 package com.epam.task.module3.workingWithRegularExpressions.Task1;
 
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,7 +8,8 @@ import static com.epam.task.Utils.SwapUtil.swapStringArray;
 import static com.epam.task.Utils.SwapUtil.swapValueArray;
 import static com.epam.task.module3.workingWithRegularExpressions.Task1.Main.STRING;
 
-public class SortByAmountSentences {
+public class SortByAmountSentencesInParagraph {
+    final static String ENDOFSENTENCE = "[!?.]";
 
     public static void run() {
         printStringArray(getSortedParagraphByAmountSentences(getArrayAmountSentencesInParagraphs()));
@@ -49,14 +49,13 @@ public class SortByAmountSentences {
         return counter;
     }
 
-    protected static String[] getParagraphsArray() {
+    private static String[] getParagraphsArray() {
         return STRING.split("\n");
     }
 
     private static int getAmountSentencesInParagraph(String[] stringArray, int i) {
         int amountSentences = 0;
-        String[] string = stringArray[i].split("[!?.]");
-        System.out.println(Arrays.toString(string));
+        String[] string = stringArray[i].split(ENDOFSENTENCE);
         amountSentences = string.length;
         return amountSentences;
     }

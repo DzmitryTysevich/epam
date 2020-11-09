@@ -2,51 +2,46 @@ package com.epam.task.module3.workingWithRegularExpressions.Task1;
 
 import com.epam.task.Utils.PrintStringUtil;
 
-import java.util.Arrays;
-
 import static com.epam.task.Utils.SwapUtil.swapStringArray;
 import static com.epam.task.Utils.SwapUtil.swapValueArray;
-import static com.epam.task.module3.workingWithRegularExpressions.Task1.SortByAmountSentences.getLengthArrayParagraph;
-import static com.epam.task.module3.workingWithRegularExpressions.Task1.SortByAmountSentences.getParagraphsArray;
 
 public class SortByLengthWordInSentences {
-    public static void main(String[] args) {
-        run();
-    }
+    final static String END_SENTENCE = "[!?.]";
+    final static String ALPHABETIC = "\\P{javaAlphabetic}+";
 
     public static void run() {
-        System.out.println(Arrays.toString(getArrayAmountWordsInParagraph()));
-        PrintStringUtil.printStringArray(getSortedParagraphByAmountWords(getArrayAmountWordsInParagraph()));
+        getArraySentencesInText(Main.STRING);
     }
 
-    public static String[] getSortedParagraphByAmountWords(int[] arrayAmountWordsInParagraphs) {
-        String[] stringsArray = getParagraphsArray();
-        for (int startIndex = 0; startIndex < arrayAmountWordsInParagraphs.length; startIndex++) {
+    public static String[] getArraySentencesInText(String string) {
+        String[] arraySentencesInText = string.split(END_SENTENCE);
+        for (int index = 0; index < arraySentencesInText.length; index++) {
+            String[] arrayWordInSentences = arraySentencesInText[index].split(ALPHABETIC);
+            printTextSortedByLengthWords(arrayWordInSentences);
+        }
+        return arraySentencesInText;
+    }
+
+    private static int[] getArrayLengthWords(String[] arrayWordInSentences) {
+        int[] arrayLengthWords = new int[arrayWordInSentences.length];
+        for (int i = 0; i < arrayLengthWords.length; i++) {
+            arrayLengthWords[i] = arrayWordInSentences[i].length();
+        }
+        return arrayLengthWords;
+    }
+
+    private static void printTextSortedByLengthWords(String[] arraySentencesInText) {
+        int[] arrayLengthWords = getArrayLengthWords(arraySentencesInText);
+        for (int startIndex = 0; startIndex < arrayLengthWords.length; startIndex++) {
             int minIndex = startIndex;
-            for (int sortIndex = startIndex + 1; sortIndex < arrayAmountWordsInParagraphs.length; sortIndex++) {
-                if (arrayAmountWordsInParagraphs[minIndex] > arrayAmountWordsInParagraphs[sortIndex]) {
+            for (int sortIndex = startIndex + 1; sortIndex < arrayLengthWords.length; sortIndex++) {
+                if (arrayLengthWords[minIndex] > arrayLengthWords[sortIndex]) {
                     minIndex = sortIndex;
                 }
             }
-            swapValueArray(arrayAmountWordsInParagraphs, startIndex, minIndex);
-            swapStringArray(stringsArray, startIndex, minIndex);
+            swapValueArray(arrayLengthWords, startIndex, minIndex);
+            swapStringArray(arraySentencesInText, startIndex, minIndex);
         }
-        return stringsArray;
-    }
-
-    public static int[] getArrayAmountWordsInParagraph() {
-        int[] arrayAmountWordsInParagraphs = new int[getLengthArrayParagraph()];
-        String[] paragraphsArray = getParagraphsArray();
-        for (int i = 0; i < paragraphsArray.length; i++) {
-            arrayAmountWordsInParagraphs[i] = getAmountWordInSentences(paragraphsArray, i);
-        }
-        return arrayAmountWordsInParagraphs;
-    }
-
-    private static int getAmountWordInSentences(String[] stringArray, int i) {
-        int amountWords = 0;
-        String[] string = stringArray[i].split("\\P{javaLetterOrDigit}+");
-        amountWords = string.length;
-        return amountWords;
+        PrintStringUtil.printStringArrayAsSentence(arraySentencesInText);
     }
 }
