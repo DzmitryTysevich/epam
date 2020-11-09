@@ -6,4 +6,10 @@ public class SwapUtil {
         arrayToSort[index1] = arrayToSort[index2];
         arrayToSort[index2] = temp;
     }
+
+    public static void swapStringArray(String[] arrayToSort, int index1, int index2) {
+        String temp = arrayToSort[index1];
+        arrayToSort[index1] = arrayToSort[index2];
+        arrayToSort[index2] = temp;
+    }
 }
