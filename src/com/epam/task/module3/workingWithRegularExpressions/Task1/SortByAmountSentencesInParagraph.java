@@ -33,8 +33,8 @@ public class SortByAmountSentencesInParagraph {
     public static int[] getArrayAmountSentencesInParagraphs() {
         int[] arrayAmountSentencesInParagraphs = new int[getLengthArrayParagraph()];
         String[] paragraphsArray = getParagraphsArray();
-        for (int i = 0; i < paragraphsArray.length; i++) {
-            arrayAmountSentencesInParagraphs[i] = getAmountSentencesInParagraph(paragraphsArray, i);
+        for (int index = 0; index < paragraphsArray.length; index++) {
+            arrayAmountSentencesInParagraphs[index] = getAmountSentencesInParagraph(paragraphsArray, index);
         }
         return arrayAmountSentencesInParagraphs;
     }

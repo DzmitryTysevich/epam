@@ -24,8 +24,8 @@ public class SortByLengthWordInSentences {
 
     private static int[] getArrayLengthWords(String[] arrayWordInSentences) {
         int[] arrayLengthWords = new int[arrayWordInSentences.length];
-        for (int i = 0; i < arrayLengthWords.length; i++) {
-            arrayLengthWords[i] = arrayWordInSentences[i].length();
+        for (int index = 0; index < arrayLengthWords.length; index++) {
+            arrayLengthWords[index] = arrayWordInSentences[index].length();
         }
         return arrayLengthWords;
     }

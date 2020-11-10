@@ -3,8 +3,6 @@ package com.epam.task.module3.workingWithRegularExpressions.Task1;
 import com.epam.task.Utils.InputUtil;
 import com.epam.task.Utils.PrintStringUtil;
 
-import java.util.Arrays;
-
 import static com.epam.task.Utils.SwapUtil.swapStringArray;
 import static com.epam.task.Utils.SwapUtil.swapValueArray;
 
