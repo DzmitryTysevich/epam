@@ -1,8 +1,8 @@
 package com.epam.task.module3.workingWithRegularExpressions.Task1;
 
 import com.epam.task.Utils.InputUtil;
-import com.epam.task.Utils.PrintStringUtil;
 
+import static com.epam.task.Utils.PrintStringUtil.printStringArrayAsSentence;
 import static com.epam.task.Utils.SwapUtil.swapStringArray;
 import static com.epam.task.Utils.SwapUtil.swapIntArray;
 
@@ -14,16 +14,16 @@ public class SortByLexeme {
 
     public static void run() {
         String[] allSentences = getSentences();
-        printTextSortedByLexeme(allSentences);
+        getTextSortedByLexeme(allSentences);
     }
 
-    public static void printTextSortedByLexeme(String[] allSentences) {
-        for (String string : allSentences) {
-            String[] sentenceWithWords = string.split(ALPHABETIC_REGEX);
+    public static void getTextSortedByLexeme(String[] allSentences) {
+        for (String sentence : allSentences) {
+            String[] sentenceWithWords = sentence.split(ALPHABETIC_REGEX);
             int[] literalsInWordCount = getLiteralsInWordCount(sentenceWithWords);
             getWordsSortedByLiteralsCount(sentenceWithWords, literalsInWordCount);
             getWordsSortedByAlphabetically(sentenceWithWords, literalsInWordCount);
-            PrintStringUtil.printStringArrayAsSentence(sentenceWithWords);
+            printStringArrayAsSentence(sentenceWithWords);
         }
     }
 
@@ -38,7 +38,7 @@ public class SortByLexeme {
         return literalsInWordCount;
     }
 
-    private static String[] getWordsSortedByLiteralsCount(String[] wordsInSentence, int[] literalsInWordCount) {
+    private static String[] getWordsSortedByLiteralsCount(String[] sentenceWithWords, int[] literalsInWordCount) {
         for (int startIndex = 0; startIndex < literalsInWordCount.length; startIndex++) {
             int minIndex = startIndex;
             for (int sortIndex = startIndex + 1; sortIndex < literalsInWordCount.length; sortIndex++) {
@@ -47,23 +47,23 @@ public class SortByLexeme {
                 }
             }
             swapIntArray(literalsInWordCount, startIndex, minIndex);
-            swapStringArray(wordsInSentence, startIndex, minIndex);
+            swapStringArray(sentenceWithWords, startIndex, minIndex);
         }
-        return wordsInSentence;
+        return sentenceWithWords;
     }
 
-    private static String[] getWordsSortedByAlphabetically(String[] wordsInSentence, int[] literalsInWordCount) {
-        for (int startIndex = wordsInSentence.length - 1; startIndex > 0; startIndex--) {
+    private static String[] getWordsSortedByAlphabetically(String[] sentenceWithWords, int[] literalsInWordCount) {
+        for (int startIndex = sentenceWithWords.length - 1; startIndex > 0; startIndex--) {
             for (int sortIndex = 0; sortIndex < startIndex; sortIndex++) {
                 if (literalsInWordCount[sortIndex] == literalsInWordCount[sortIndex + 1]
                         && literalsInWordCount[sortIndex] != 0 && literalsInWordCount[sortIndex + 1] != 0) {
-                    if (wordsInSentence[sortIndex].compareToIgnoreCase(wordsInSentence[sortIndex + 1]) > 0) {
-                        swapStringArray(wordsInSentence, sortIndex, (sortIndex + 1));
+                    if (sentenceWithWords[sortIndex].compareToIgnoreCase(sentenceWithWords[sortIndex + 1]) > 0) {
+                        swapStringArray(sentenceWithWords, sortIndex, (sortIndex + 1));
                     }
                 }
             }
         }
-        return wordsInSentence;
+        return sentenceWithWords;
     }
 
     private static int getLexemesCount(String[] string) {

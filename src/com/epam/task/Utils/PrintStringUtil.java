@@ -2,14 +2,14 @@ package com.epam.task.Utils;
 
 public class PrintStringUtil {
     public static void printStringArray(String[] array) {
-        for (int stringIndex = 0; stringIndex < array.length; stringIndex++) {
-            System.out.printf("%s\n", array[stringIndex]);
+        for (int index = 0; index < array.length; index++) {
+            System.out.printf("%s\n", array[index]);
         }
     }
 
     public static void printStringArrayAsSentence(String[] array) {
-        for (int arrayIndex = 0; arrayIndex < array.length; arrayIndex++) {
-            System.out.printf(" %s", array[arrayIndex]);
+        for (int index = 0; index < array.length; index++) {
+            System.out.printf(" %s", array[index]);
         }
         System.out.println();
     }
