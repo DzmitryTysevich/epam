@@ -8,9 +8,9 @@ public class PrintChoice {
                 "Enter <2> if sort text by length words in sentences\n" +
                 "Enter <3> if sort text by lexeme\n" +
                 "Enter number: ")) {
-            case 1 -> SortByAmountSentencesInParagraph.run();
-            case 2 -> SortByLengthWordInSentences.run();
-            case 3 -> SortByLexeme.run();
+            case 1 : SortByAmountSentencesInParagraph.run(); break;
+            case 2 : SortByLengthWordInSentences.run(); break;
+            case 3 : SortByLexeme.run(); break;
         }
     }
 }

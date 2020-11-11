@@ -6,42 +6,50 @@ import static com.epam.task.Utils.SwapUtil.swapStringArray;
 import static com.epam.task.Utils.SwapUtil.swapIntArray;
 
 public class SortByLengthWordInSentences {
-    final static String END_SENTENCE = "[!?.]";
-    final static String ALPHABETIC = "\\P{javaAlphabetic}+";
+    final static String END_SENTENCE_REGEX = "[!?.]";
+    final static String ALPHABETIC_REGEX = "\\P{javaAlphabetic}+";
 
     public static void run() {
-        getArraySentencesInText(Main.STRING);
+        String[][] sentencesWithSortedWords = getSentencesWithSortedWords(Main.STRING);
+        PrintStringUtil.printStringArrayAsSentences(sentencesWithSortedWords);
     }
 
-    public static String[] getArraySentencesInText(String string) {
-        String[] arraySentencesInText = string.split(END_SENTENCE);
-        for (int index = 0; index < arraySentencesInText.length; index++) {
-            String[] arrayWordInSentences = arraySentencesInText[index].split(ALPHABETIC);
-            printTextSortedByLengthWords(arrayWordInSentences);
+    public static String[][] getSentencesWithSortedWords(String string) {
+        String[] allSentences = string.split(END_SENTENCE_REGEX);
+        String[][] sentencesWithWords = new String[allSentences.length][];
+        for (int index = 0; index < allSentences.length; index++) {
+            String sentence = allSentences[index];
+            String[] words = getWordsSortedByLength(sentence);
+            sentencesWithWords[index] = words;
         }
-        return arraySentencesInText;
+        return sentencesWithWords;
     }
 
-    private static int[] getArrayLengthWords(String[] arrayWordInSentences) {
-        int[] arrayLengthWords = new int[arrayWordInSentences.length];
-        for (int index = 0; index < arrayLengthWords.length; index++) {
-            arrayLengthWords[index] = arrayWordInSentences[index].length();
+    private static String[] getWordsSortedByLength(String sentence) {
+        String[] words = sentence.split(ALPHABETIC_REGEX);
+        sortByWordLength(words);
+        return words;
+    }
+
+    private static int[] getWordsLengths(String[] words) {
+        int[] wordsLengths = new int[words.length];
+        for (int index = 0; index < wordsLengths.length; index++) {
+            wordsLengths[index] = words[index].length();
         }
-        return arrayLengthWords;
+        return wordsLengths;
     }
 
-    private static void printTextSortedByLengthWords(String[] arraySentencesInText) {
-        int[] arrayLengthWords = getArrayLengthWords(arraySentencesInText);
-        for (int startIndex = 0; startIndex < arrayLengthWords.length; startIndex++) {
+    private static void sortByWordLength(String[] words) {
+        int[] wordsLengths = getWordsLengths(words);
+        for (int startIndex = 0; startIndex < wordsLengths.length; startIndex++) {
             int minIndex = startIndex;
-            for (int sortIndex = startIndex + 1; sortIndex < arrayLengthWords.length; sortIndex++) {
-                if (arrayLengthWords[minIndex] > arrayLengthWords[sortIndex]) {
+            for (int sortIndex = startIndex + 1; sortIndex < wordsLengths.length; sortIndex++) {
+                if (wordsLengths[minIndex] > wordsLengths[sortIndex]) {
                     minIndex = sortIndex;
                 }
             }
-            swapIntArray(arrayLengthWords, startIndex, minIndex);
-            swapStringArray(arraySentencesInText, startIndex, minIndex);
+            swapIntArray(wordsLengths, startIndex, minIndex);
+            swapStringArray(words, startIndex, minIndex);
         }
-        PrintStringUtil.printStringArrayAsSentence(arraySentencesInText);
     }
 }
