@@ -1,6 +1,5 @@
 package com.epam.task.module3.workingWithRegularExpressions.Task1;
 
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
