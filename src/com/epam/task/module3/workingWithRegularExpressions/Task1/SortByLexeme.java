@@ -4,7 +4,7 @@ import com.epam.task.Utils.InputUtil;
 import com.epam.task.Utils.PrintStringUtil;
 
 import static com.epam.task.Utils.SwapUtil.swapStringArray;
-import static com.epam.task.Utils.SwapUtil.swapValueArray;
+import static com.epam.task.Utils.SwapUtil.swapIntArray;
 
 public class SortByLexeme {
     final static String END_SENTENCE = "[!?.]+";
@@ -46,7 +46,7 @@ public class SortByLexeme {
                     minIndex = sortIndex;
                 }
             }
-            swapValueArray(arrayAmountCharsInWords, startIndex, minIndex);
+            swapIntArray(arrayAmountCharsInWords, startIndex, minIndex);
             swapStringArray(wordsInSentence, startIndex, minIndex);
         }
     }

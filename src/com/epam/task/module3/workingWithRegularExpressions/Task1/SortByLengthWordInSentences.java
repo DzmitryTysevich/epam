@@ -3,7 +3,7 @@ package com.epam.task.module3.workingWithRegularExpressions.Task1;
 import com.epam.task.Utils.PrintStringUtil;
 
 import static com.epam.task.Utils.SwapUtil.swapStringArray;
-import static com.epam.task.Utils.SwapUtil.swapValueArray;
+import static com.epam.task.Utils.SwapUtil.swapIntArray;
 
 public class SortByLengthWordInSentences {
     final static String END_SENTENCE = "[!?.]";
@@ -39,7 +39,7 @@ public class SortByLengthWordInSentences {
                     minIndex = sortIndex;
                 }
             }
-            swapValueArray(arrayLengthWords, startIndex, minIndex);
+            swapIntArray(arrayLengthWords, startIndex, minIndex);
             swapStringArray(arraySentencesInText, startIndex, minIndex);
         }
         PrintStringUtil.printStringArrayAsSentence(arraySentencesInText);

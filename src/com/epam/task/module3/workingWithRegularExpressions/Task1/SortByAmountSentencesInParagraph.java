@@ -5,41 +5,44 @@ import java.util.regex.Pattern;
 
 import static com.epam.task.Utils.PrintStringUtil.printStringArray;
 import static com.epam.task.Utils.SwapUtil.swapStringArray;
-import static com.epam.task.Utils.SwapUtil.swapValueArray;
+import static com.epam.task.Utils.SwapUtil.swapIntArray;
 import static com.epam.task.module3.workingWithRegularExpressions.Task1.Main.STRING;
 
 public class SortByAmountSentencesInParagraph {
-    final static String ENDOFSENTENCE = "[!?.]";
+    final static String END_OF_SENTENCE_REGEX = "[!?.]";
 
     public static void run() {
-        printStringArray(getSortedParagraphByAmountSentences(getArrayAmountSentencesInParagraphs()));
+        int[] sentencesInParagraphsCount = getSentencesInParagraphsCount();
+        String[] paragraphsSortedBySentenceCount = getParagraphsSortedBySentenceCount(sentencesInParagraphsCount);
+        printStringArray(paragraphsSortedBySentenceCount);
     }
 
-    public static String[] getSortedParagraphByAmountSentences(int[] arrayAmountSentencesInParagraphs) {
-        String[] stringsArray = getParagraphsArray();
-        for (int startIndex = 0; startIndex < arrayAmountSentencesInParagraphs.length; startIndex++) {
+    public static String[] getParagraphsSortedBySentenceCount(int[] sentencesInParagraphsCount) {
+        String[] paragraphs = getParagraphs();
+        for (int startIndex = 0; startIndex < sentencesInParagraphsCount.length; startIndex++) {
             int minIndex = startIndex;
-            for (int sortIndex = startIndex + 1; sortIndex < arrayAmountSentencesInParagraphs.length; sortIndex++) {
-                if (arrayAmountSentencesInParagraphs[minIndex] > arrayAmountSentencesInParagraphs[sortIndex]) {
+            for (int sortIndex = startIndex + 1; sortIndex < sentencesInParagraphsCount.length; sortIndex++) {
+                if (sentencesInParagraphsCount[minIndex] > sentencesInParagraphsCount[sortIndex]) {
                     minIndex = sortIndex;
                 }
             }
-            swapValueArray(arrayAmountSentencesInParagraphs, startIndex, minIndex);
-            swapStringArray(stringsArray, startIndex, minIndex);
+            swapIntArray(sentencesInParagraphsCount, startIndex, minIndex);
+            swapStringArray(paragraphs, startIndex, minIndex);
         }
-        return stringsArray;
+        return paragraphs;
     }
 
-    public static int[] getArrayAmountSentencesInParagraphs() {
-        int[] arrayAmountSentencesInParagraphs = new int[getLengthArrayParagraph()];
-        String[] paragraphsArray = getParagraphsArray();
+    public static int[] getSentencesInParagraphsCount() {
+        int[] sentencesInParagraphsCount = new int[getParagraphsCount()];
+        String[] paragraphsArray = getParagraphs();
         for (int index = 0; index < paragraphsArray.length; index++) {
-            arrayAmountSentencesInParagraphs[index] = getAmountSentencesInParagraph(paragraphsArray, index);
+            String paragraph = paragraphsArray[index];
+            sentencesInParagraphsCount[index] = getSentencesCount(paragraph);
         }
-        return arrayAmountSentencesInParagraphs;
+        return sentencesInParagraphsCount;
     }
 
-    protected static int getLengthArrayParagraph() {
+    protected static int getParagraphsCount() {
         Pattern pattern = Pattern.compile("\n");
         Matcher matcher = pattern.matcher(STRING);
         int counter = 1;
@@ -49,14 +52,12 @@ public class SortByAmountSentencesInParagraph {
         return counter;
     }
 
-    private static String[] getParagraphsArray() {
+    private static String[] getParagraphs() {
         return STRING.split("\n");
     }
 
-    private static int getAmountSentencesInParagraph(String[] stringArray, int i) {
-        int amountSentences = 0;
-        String[] string = stringArray[i].split(ENDOFSENTENCE);
-        amountSentences = string.length;
-        return amountSentences;
+    private static int getSentencesCount(String paragraph) {
+        String[] sentences = paragraph.split(END_OF_SENTENCE_REGEX);
+        return sentences.length;
     }
 }
