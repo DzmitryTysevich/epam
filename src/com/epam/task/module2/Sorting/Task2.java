@@ -20,7 +20,7 @@ public class Task2 {
                     indexMin = sortingIndex;
                 }
             }
-            SwapUtil.swapValueArray(array, startIndex, indexMin);
+            SwapUtil.swapIntArray(array, startIndex, indexMin);
         }
         return array;
     }
