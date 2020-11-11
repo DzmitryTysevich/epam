@@ -17,7 +17,7 @@ public class Task3 {
         for (int startIndex = array.length - 1; startIndex > 0; startIndex--) {
             for (int sortingIndex = 0; sortingIndex < startIndex; sortingIndex++) {
                 if (array[sortingIndex] > array[sortingIndex + 1]) {
-                    SwapUtil.swapValueArray(array, sortingIndex, sortingIndex + 1);
+                    SwapUtil.swapIntArray(array, sortingIndex, sortingIndex + 1);
                 }
             }
         }

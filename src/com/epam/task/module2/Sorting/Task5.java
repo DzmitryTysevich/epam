@@ -18,7 +18,7 @@ public class Task5 {
             for (int right = 0; right < array.length; right++) {
                 for (int sortingIndex = right - gap; sortingIndex >= 0; sortingIndex -= gap) {
                     if (array[sortingIndex] > array[sortingIndex + gap]) {
-                        SwapUtil.swapValueArray(array, sortingIndex, sortingIndex + gap);
+                        SwapUtil.swapIntArray(array, sortingIndex, sortingIndex + gap);
                     }
                 }
             }
